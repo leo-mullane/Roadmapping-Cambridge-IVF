@@ -1,0 +1,178 @@
+[
+ {
+  "qw": 1,
+  "slug": "pure-criteria",
+  "title": "Fix the conflicting PURE criteria",
+  "theme": "costs",
+  "idea": 5,
+  "summary": "Agree one set of PURE criteria with the clinical lead and make the prices page and the PURE page say the same thing."
+ },
+ {
+  "qw": 2,
+  "slug": "addon-ratings",
+  "title": "Show the HFEA rating next to every add-on",
+  "theme": "costs",
+  "idea": 6,
+  "summary": "Show the HFEA’s traffic-light rating beside every optional add-on the clinic sells, with a line on why it might be suggested."
+ },
+ {
+  "qw": 3,
+  "slug": "staged-payments",
+  "title": "Lead with staged payments on package pages",
+  "theme": "costs",
+  "idea": 8,
+  "summary": "Put “pay for cycle 1 now, later cycles only if you need them” at the top of the Duo and Multi-Cycle pages, with the amounts."
+ },
+ {
+  "qw": 4,
+  "slug": "tidy-prices",
+  "title": "Tidy the prices page",
+  "theme": "costs",
+  "idea": 32,
+  "summary": "Correct the typos on the prices page, show the add-ons once in their own table and check the gamete transport fees."
+ },
+ {
+  "qw": 5,
+  "slug": "session-dates",
+  "title": "Information sessions people can see and book on the page",
+  "theme": "start",
+  "idea": 11,
+  "summary": "Show the next information session dates on the homepage and key service pages, with booking on the page."
+ },
+ {
+  "qw": 6,
+  "slug": "sticky-bar",
+  "title": "Sticky ’Start your journey’ bar on mobile",
+  "theme": "start",
+  "idea": 12,
+  "summary": "A slim bar at the bottom of the screen on phones with Call, Information session and Enquire, on service, price and package pages."
+ },
+ {
+  "qw": 7,
+  "slug": "measure",
+  "title": "Measure what the site produces",
+  "theme": "start",
+  "idea": 13,
+  "summary": "Turn on GA4 events for phone and email taps, information session bookings and price-list downloads, and send a one-page report each month."
+ },
+ {
+  "qw": 8,
+  "slug": "nhs-funding",
+  "title": "Update the NHS funding page",
+  "theme": "start",
+  "idea": 28,
+  "summary": "Replace the CCG-era copy with the current ICB position, a short eligibility summary and a clear self-funded route for people who don’t qualify."
+ },
+ {
+  "qw": 9,
+  "slug": "switching",
+  "title": "Switching clinics made simple",
+  "theme": "start",
+  "idea": 41,
+  "summary": "Explain how to move treatment to Cambridge IVF: records to bring, transferring eggs or embryos, the fee and a dedicated enquiry route."
+ },
+ {
+  "qw": 10,
+  "slug": "hfea-rating",
+  "title": "Lift the HFEA patient rating",
+  "theme": "trust",
+  "idea": 24,
+  "summary": "Ask every patient at their review appointment to rate the clinic on the HFEA site, with a card, a QR code and a follow-up email."
+ },
+ {
+  "qw": 11,
+  "slug": "why-nhs",
+  "title": "Say plainly why an NHS clinic",
+  "theme": "trust",
+  "idea": 26,
+  "summary": "A short “Why an NHS clinic?” section on the homepage and why-choose page, with four concrete reasons."
+ },
+ {
+  "qw": 12,
+  "slug": "heritage-date",
+  "title": "One heritage date",
+  "theme": "trust",
+  "idea": 22,
+  "summary": "Use one line about the clinic’s history everywhere: licensed by the HFEA since 1992, at Kefford House since 2011."
+ },
+ {
+  "qw": 13,
+  "slug": "broken-links",
+  "title": "Fix the two broken menu links",
+  "theme": "content",
+  "idea": 17,
+  "summary": "Remove “Early pregnancy and Coronavirus” from the menu and give “Your journey” a real page or a working link."
+ },
+ {
+  "qw": 14,
+  "slug": "postcode-lottery",
+  "title": "Retire the ’Postcode lottery’ copy",
+  "theme": "content",
+  "idea": 29,
+  "summary": "Remove the “Postcode lottery” section or replace it with a short, current explanation of NHS funding."
+ },
+ {
+  "qw": 15,
+  "slug": "legacy-links",
+  "title": "Clean up legacy links",
+  "theme": "content",
+  "idea": 30,
+  "summary": "Replace links to the old cambridge-ivf.org.uk domain and the Outlook “safelinks” on the feedback page with direct links."
+ },
+ {
+  "qw": 16,
+  "slug": "non-urgent",
+  "title": "Stop labelling information as ’Non-urgent advice’",
+  "theme": "content",
+  "idea": 31,
+  "summary": "Use plain headings on the support information page instead of the NHS “Non-urgent advice” card, and link to the lab page rather than repeating it."
+ },
+ {
+  "qw": 17,
+  "slug": "under-development",
+  "title": "Remove ’under development’ notices",
+  "theme": "content",
+  "idea": 33,
+  "summary": "Finish or remove the “this page is currently under development” notes, and group leaflets by stage of treatment."
+ },
+ {
+  "qw": 18,
+  "slug": "egg-bank-topic",
+  "title": "Keep the egg bank page on topic",
+  "theme": "content",
+  "idea": 34,
+  "summary": "Move the semen-quality advice from the donor egg page to an andrology page, and drop the supplement brand."
+ },
+ {
+  "qw": 19,
+  "slug": "pregnancy-care",
+  "title": "Refresh the pregnancy care page",
+  "theme": "content",
+  "idea": 35,
+  "summary": "Lead the pregnancy care page with what joined-up care means for a patient, not the Rosie’s opening in 2013."
+ },
+ {
+  "qw": 20,
+  "slug": "theme-fix",
+  "title": "Fix the inner-page theme",
+  "theme": "look",
+  "idea": 18,
+  "summary": "Correct the theme setting on inner pages so they use the Cambridge IVF colours already in the stylesheet, not NHS blue."
+ },
+ {
+  "qw": 21,
+  "slug": "next-step-panel",
+  "title": "Use the empty right-hand column",
+  "theme": "look",
+  "idea": 19,
+  "summary": "Use the empty right-hand side of content pages for a “Next step” panel: price, next information session and an enquiry button."
+ },
+ {
+  "qw": 22,
+  "slug": "search-basics",
+  "title": "Search visibility basics",
+  "theme": "look",
+  "idea": 42,
+  "summary": "Write unique titles and descriptions for the top 20 pages, and add short FAQs to the pages people search for."
+ }
+]

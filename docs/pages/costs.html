@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clear costs: Cambridge IVF prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Prototype navigator (replaces Cambridge IVF's own header, R01).
+       Two tabs: the five big improvements and the quick wins. -->
+  <header class="sticky site-header proto-nav">
+    <div class="proto-tabs">
+      <div class="container">
+        <nav class="proto-sections" aria-label="Sections">
+          <a href="../index.html" data-section-link="major">Big improvements</a>
+          <a href="../quick-wins/index.html" data-section-link="quick">Quick wins</a>
+        </nav>
+      </div>
+    </div>
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="Cambridge IVF prototypes, overview">Cambridge IVF <span>prototypes</span></a>
+      <nav aria-label="Big improvements" data-section="major">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/costs.html" data-proto="costs"><span class="n">1</span> Clear costs</a></li>
+          <li><a href="../pages/find-your-path.html" data-proto="find-your-path your-journey"><span class="n">2</span> Find your path</a></li>
+          <li><a href="../pages/start.html" data-proto="start"><span class="n">3</span> Start today</a></li>
+          <li><a href="../pages/proof.html" data-proto="proof"><span class="n">4</span> Proof you can trust</a></li>
+          <li><a href="../pages/egg-freezing.html" data-proto="egg-freezing self-pay"><span class="n">5</span> Self-pay services</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Quick wins" data-section="quick" hidden>
+        <ul class="proto-links">
+          <li><a href="../quick-wins/index.html" data-qw-link="index">Overview</a></li>
+          <li class="qw-jump-li"><label class="qw-jump-label" for="qw-jump">Quick win</label>
+            <select id="qw-jump" class="qw-jump" data-qw-jump><option value="">Jump to…</option></select></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="main" class="flush">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 1 of 5 · Clear costs</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Replace the long prices page with one that answers the question people actually have, which is "what will this cost me?" A short estimator gives a likely total and how it's paid in stages. The packages sit side by side. Every optional add-on carries the HFEA's own rating of the evidence for it, and a short section explains the ways to pay.</p></div>
+          <div><h2>Why</h2><p>Cambridge IVF publishes its prices in full, which many clinics don't, and still 16 of the 22 people who have rated it on the HFEA site say they paid "way above the estimate". The prices page runs to about 8,000 pixels on a phone, repeats the add-on list under nearly every package and gives different PURE criteria from the PURE page. None of the add-ons mention that the HFEA rates time-lapse imaging and PICSI as making no difference to the chance of a baby. An honest total up front should mean fewer people dropping out after an expensive first consultation, more choosing the Duo and Multi-Cycle packages, and a better score on the comparison site most self-funders check.</p></div>
+        </div>
+        <p class="proposal-foot">Prices are those on the live prices page. Criteria and add-on wording are for the clinical team to confirm.</p>
+      </div>
+    </aside>
+
+    <!-- Page intro (R10) -->
+    <div class="page-head">
+      <div class="container">
+        <p class="cv-eyebrow">Prices</p>
+        <h1>What will my treatment cost?</h1>
+        <p class="lead">Every price is fixed and published, and Duo and Multi-Cycle packages are paid in stages, only for the cycles you go ahead with. Answer three questions for a likely total, then talk it through with our finance manager at a free information session.</p>
+        <div class="row" style="margin-top:1rem">
+          <a class="btn" href="#estimate">Estimate my cost</a>
+          <a class="btn btn-secondary" href="#compare">Compare packages</a>
+          <a class="btn btn-secondary" href="#evidence">Add-ons and the evidence</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <!-- Cost estimator (R11, idea 1) -->
+      <section class="cv-section" id="estimate" aria-labelledby="est-title">
+        <h2 class="section-title" id="est-title">Estimate your cost</h2>
+        <div class="cv-est">
+          <form id="estimator" novalidate>
+            <fieldset class="cv-q">
+              <legend>1. Which package are you looking at?</legend>
+              <div class="cv-opts">
+                <span class="cv-opt"><input type="radio" name="pkg" id="p-first" value="first"><label for="p-first">First IVF</label></span>
+                <span class="cv-opt"><input type="radio" name="pkg" id="p-pure" value="pure" checked><label for="p-pure">PURE</label></span>
+                <span class="cv-opt"><input type="radio" name="pkg" id="p-pureduo" value="pureduo"><label for="p-pureduo">PURE Duo</label></span>
+                <span class="cv-opt"><input type="radio" name="pkg" id="p-plus" value="plus"><label for="p-plus">IVF Plus</label></span>
+                <span class="cv-opt"><input type="radio" name="pkg" id="p-plusduo" value="plusduo"><label for="p-plusduo">IVF Plus Duo</label></span>
+                <span class="cv-opt"><input type="radio" name="pkg" id="p-multi" value="multi"><label for="p-multi">Multi-Cycle</label></span>
+              </div>
+              <p class="field-hint">Not sure? <a href="../pages/find-your-path.html#check">Check which package is likely to fit</a>.</p>
+            </fieldset>
+            <fieldset class="cv-q">
+              <legend>2. Are you likely to need ICSI?</legend>
+              <div class="cv-opts">
+                <span class="cv-opt"><input type="radio" name="icsi" id="i-no" value="no"><label for="i-no">No</label></span>
+                <span class="cv-opt"><input type="radio" name="icsi" id="i-yes" value="yes"><label for="i-yes">Yes</label></span>
+                <span class="cv-opt"><input type="radio" name="icsi" id="i-unsure" value="unsure" checked><label for="i-unsure">Not sure yet</label></span>
+              </div>
+              <p class="field-hint">ICSI injects a single sperm into each egg. It's usually needed when sperm count or movement is low (£1,323 a cycle, included in First IVF).</p>
+            </fieldset>
+            <fieldset class="cv-q">
+              <legend>3. Would you freeze any spare embryos?</legend>
+              <div class="cv-opts">
+                <span class="cv-opt"><input type="radio" name="freeze" id="f-no" value="no"><label for="f-no">No</label></span>
+                <span class="cv-opt"><input type="radio" name="freeze" id="f-yes" value="yes"><label for="f-yes">Yes</label></span>
+                <span class="cv-opt"><input type="radio" name="freeze" id="f-unsure" value="unsure" checked><label for="f-unsure">If we have any</label></span>
+              </div>
+            </fieldset>
+            <fieldset class="cv-q">
+              <legend>Optional extras you've heard about</legend>
+              <p class="field-hint" style="margin:0 0 0.5rem">EmbryoScope and EmbryoGlue are already included in every IVF package at no extra cost.</p>
+              <div class="cv-addons" id="est-addons"></div>
+              <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Each extra shows the HFEA's rating from the same data as the evidence table below, so the two can't disagree. Ticking one adds it to the total.</p>
+            </fieldset>
+          </form>
+
+          <div class="cv-sticky">
+            <div class="cv-total" aria-live="polite">
+              <p class="cv-eyebrow">Your likely total</p>
+              <p class="cv-price" id="est-total">£5,240</p>
+              <p class="cv-muted">Criteria: <span id="est-criteria"></span></p>
+              <ul class="cv-lines" id="est-lines"></ul>
+              <h3 style="font-size:1rem;margin:0 0 0.25rem">When you pay</h3>
+              <ul class="cv-steps-pay" id="est-stages"></ul>
+              <div class="row" style="margin-top:1rem">
+                <a class="btn" id="est-book" data-base="start.html" href="start.html?topic=costs">Talk it through with us</a>
+              </div>
+              <form id="est-send" class="cv-form" style="margin-top:1rem" novalidate>
+                <div class="field" style="margin:0"><label for="est-email">Email me this estimate</label>
+                  <div class="copy-row"><input id="est-email" type="email" autocomplete="email"><button class="btn btn-secondary" type="submit">Send</button></div>
+                  <p class="field-error" id="est-email-err" hidden>Enter a valid email address</p>
+                </div>
+              </form>
+            </div>
+            <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>Medication top-ups beyond the package and Lubion are the most likely source of the "way above the estimate" ratings. Should the estimator show a typical range for them? The clinic's finance team would know.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Package comparison (R12, idea 3) -->
+      <section class="cv-section" id="compare" aria-labelledby="cmp-title">
+        <div class="row between">
+          <h2 class="section-title" id="cmp-title" style="margin:0">Compare IVF packages</h2>
+          <div class="row" role="group" aria-label="Show prices as">
+            <button type="button" class="chip" data-cmp-mode="total" aria-pressed="true">Package price</button>
+            <button type="button" class="chip" data-cmp-mode="cycle" aria-pressed="false">Price per cycle</button>
+          </div>
+        </div>
+        <p class="cv-muted" style="margin:0.75rem 0 1rem">All packages include medication up to the pregnancy test (except Lubion), sedation, monitoring scans and blood tests, the HFEA fee, blastocyst culture, EmbryoScope, EmbryoGlue, two counselling sessions and a review or early pregnancy scan.</p>
+        <div class="cv-table-wrap">
+          <table class="cv-table cv-cmp" id="cmp">
+            <thead><tr><th scope="col">Package</th><th scope="col" data-col="first">First IVF</th><th scope="col" data-col="pure">PURE</th><th scope="col" data-col="pureduo">PURE Duo</th><th scope="col" data-col="plus">IVF Plus</th><th scope="col" data-col="plusduo">IVF Plus Duo</th><th scope="col" data-col="multi">Multi-Cycle</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Who it's for</th><td data-col="first">Your first IVF, with no previous natural pregnancy</td><td data-col="pure">Good prognosis</td><td data-col="pureduo">Good prognosis, two tries</td><td data-col="plus">Need a higher medication dose</td><td data-col="plusduo">Higher dose, two tries</td><td data-col="multi">Best value over three tries</td></tr>
+              <tr><th scope="row">Cycles</th><td data-col="first">1</td><td data-col="pure">1</td><td data-col="pureduo">2</td><td data-col="plus">1</td><td data-col="plusduo">2</td><td data-col="multi">3</td></tr>
+              <tr><th scope="row">Price</th><td data-col="first" data-total="2900" data-cycles="1">£2,900</td><td data-col="pure" data-total="5240" data-cycles="1">£5,240</td><td data-col="pureduo" data-total="7265" data-cycles="2">£7,265</td><td data-col="plus" data-total="6290" data-cycles="1">£6,290</td><td data-col="plusduo" data-total="8265" data-cycles="2">£8,265</td><td data-col="multi" data-total="11540" data-cycles="3">£11,540</td></tr>
+              <tr><th scope="row">How you pay</th><td data-col="first">Up front</td><td data-col="pure">Up front</td><td data-col="pureduo">£5,690, then £1,575 only if needed</td><td data-col="plus">Up front</td><td data-col="plusduo">£6,690, then £1,575 only if needed</td><td data-col="multi">£8,390, then £1,575 twice, only if needed</td></tr>
+              <tr><th scope="row">Age</th><td data-col="first">37 or under</td><td data-col="pure">37 or under</td><td data-col="pureduo">37 or under</td><td data-col="plus">Under 45</td><td data-col="plusduo">Under 45</td><td data-col="multi">Under 45</td></tr>
+              <tr><th scope="row">AMH</th><td data-col="first">6 to 35</td><td data-col="pure">6 to 35</td><td data-col="pureduo">6 to 35</td><td data-col="plus">Under 50</td><td data-col="plusduo">Under 50</td><td data-col="multi">Under 50</td></tr>
+              <tr><th scope="row">BMI</th><td data-col="first">Below 35</td><td data-col="pure">Below 35</td><td data-col="pureduo">Below 35</td><td data-col="plus">18 to 35</td><td data-col="plusduo">18 to 35</td><td data-col="multi">18 to 35</td></tr>
+              <tr><th scope="row">ICSI</th><td data-col="first">Included if needed</td><td data-col="pure">£1,323 a cycle</td><td data-col="pureduo">£1,323 a cycle</td><td data-col="plus">£1,323 a cycle</td><td data-col="plusduo">£1,323 a cycle</td><td data-col="multi">£1,323 a cycle</td></tr>
+              <tr><th scope="row"></th><td data-col="first"><a class="btn btn-sm" href="?package=first#estimate">Estimate</a></td><td data-col="pure"><a class="btn btn-sm" href="?package=pure#estimate">Estimate</a></td><td data-col="pureduo"><a class="btn btn-sm" href="?package=pureduo#estimate">Estimate</a></td><td data-col="plus"><a class="btn btn-sm" href="?package=plus#estimate">Estimate</a></td><td data-col="plusduo"><a class="btn btn-sm" href="?package=plusduo#estimate">Estimate</a></td><td data-col="multi"><a class="btn btn-sm" href="?package=multi#estimate">Estimate</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="wf-note query" data-note="3"><span class="wf-note-label">Open question</span>The live site gives two sets of PURE criteria (37 and under, AMH 6–35, BMI below 35 on the prices page; under 38, AMH above 10, BMI below 30 on the PURE page). The table uses the prices page until the clinical lead confirms. Plus and Multi-Cycle criteria are taken from the Multi-Cycle page.</p>
+        <p class="wf-note" data-note="4"><span class="wf-note-label">Behaviour</span>Every figure comes from one set of price records in the content management system, so the table, the estimator, the package pages and the PDF price list all change together each April.</p>
+      </section>
+
+      <!-- Add-ons and the evidence (R13, idea 6) -->
+      <section class="cv-section" id="evidence" aria-labelledby="ev-title">
+        <h2 class="section-title" id="ev-title">Add-ons and the evidence</h2>
+        <div class="cv-split">
+          <div>
+            <p>Add-ons are optional extras on top of IVF. The HFEA, the regulator, rates whether good evidence shows each one improves the chance of having a baby. We show its rating next to everything we offer, and we'll only suggest an add-on when there's a reason it may help you.</p>
+            <div class="row" role="group" aria-label="Filter by HFEA rating" style="margin:1rem 0">
+              <button type="button" class="chip" data-hfea-filter="all" aria-pressed="true">All</button>
+              <button type="button" class="chip" data-hfea-filter="amber" aria-pressed="false">Amber</button>
+              <button type="button" class="chip" data-hfea-filter="grey" aria-pressed="false">Grey</button>
+              <button type="button" class="chip" data-hfea-filter="black" aria-pressed="false">Black</button>
+              <button type="button" class="chip" data-hfea-filter="red" aria-pressed="false">Red</button>
+            </div>
+            <div class="cv-table-wrap">
+              <table class="cv-table">
+                <thead><tr><th scope="col">Add-on</th><th scope="col">Our price</th><th scope="col">HFEA rating</th><th scope="col">Why we might suggest it</th></tr></thead>
+                <tbody>
+                  <tr data-hfea-row="black"><th scope="row">EmbryoScope time-lapse imaging</th><td>Included</td><td><span class="hfea black">Black: no effect</span></td><td>It lets embryologists watch embryos without taking them out of the incubator. We include it because it's how our lab works, not because it raises the chance of a baby.</td></tr>
+                  <tr data-hfea-row="amber"><th scope="row">EmbryoGlue</th><td>Included</td><td><span class="hfea amber">Amber: conflicting evidence</span></td><td>[Clinical rationale to be written by the embryology team.]</td></tr>
+                  <tr data-hfea-row="black"><th scope="row">PICSI and Zymot</th><td>£245 and £150</td><td><span class="hfea black">Black: no effect</span></td><td>Only with ICSI. [Clinical rationale to be written.]</td></tr>
+                  <tr data-hfea-row="red"><th scope="row">Endometrial receptivity test</th><td>£1,308 to £1,623</td><td><span class="hfea red">Red: may reduce success or safety concerns</span></td><td>[Clinical team to decide whether this should still be offered.]</td></tr>
+                  <tr data-hfea-row="grey"><th scope="row">Sperm DNA fragmentation test</th><td>£462</td><td><span class="hfea grey">Grey: not enough evidence</span></td><td>[Clinical rationale to be written.]</td></tr>
+                  <tr data-hfea-row="grey"><th scope="row">Assisted hatching</th><td>[Price]</td><td><span class="hfea grey">Grey: not enough evidence</span></td><td>Described on the treatments page. [Confirm whether it's still offered.]</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="cv-panel soft">
+            <h3 style="margin-top:0">What the colours mean</h3>
+            <ul class="cv-legendlist">
+              <li><span class="hfea green">Green</span> Good evidence it helps</li>
+              <li><span class="hfea amber">Amber</span> Studies disagree</li>
+              <li><span class="hfea grey">Grey</span> Not enough good evidence</li>
+              <li><span class="hfea black">Black</span> Good evidence it makes no difference</li>
+              <li><span class="hfea red">Red</span> May reduce success, or safety concerns</li>
+            </ul>
+            <p class="cv-small" style="margin-top:1rem">Ratings are the HFEA's, for the chance of having a baby for most patients. Some add-ons have other ratings for particular groups. <a href="https://www.hfea.gov.uk/treatments/treatment-add-ons/">Read the HFEA's guide to add-ons</a>.</p>
+          </div>
+        </div>
+        <p class="wf-note query" data-note="5"><span class="wf-note-label">Open question</span>Being this open could reduce sales of some optional extras. It's also what an NHS clinic is expected to do, and private rivals find it hard to copy. Does the clinical lead want to keep offering add-ons rated red?</p>
+      </section>
+
+      <!-- Ways to pay (R14, ideas 7 and 8) -->
+      <section class="cv-section" id="pay" aria-labelledby="pay-title">
+        <h2 class="section-title" id="pay-title">Ways to pay</h2>
+        <div class="grid grid-3">
+          <div class="card"><h3 class="card-title">Pay in stages</h3><p class="card-text">Duo and Multi-Cycle packages are paid one cycle at a time. If you're pregnant after the first, you don't pay for the rest. Multi-Cycle: £8,390, then £1,575, then £1,575.</p></div>
+          <div class="card"><h3 class="card-title">Refunds if you can't go ahead</h3><p class="card-text">The price list sets cancellation amounts of £650 before egg collection and £200 after it. [Confirm what is refunded, and for which packages, in plain words.]</p></div>
+          <div class="card"><h3 class="card-title">Spread the cost</h3><p class="card-text">[Regulated finance partner or interest-free instalments, if the Trust agrees.]</p><p class="wf-note query" data-note="6"><span class="wf-note-label">Open question</span>Every private rival we looked at offers finance. Is this something CUH would allow?</p></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Sticky actions on mobile (idea 12) -->
+    <nav class="cv-actionbar" aria-label="Quick actions">
+      <a class="btn btn-secondary" href="tel:01223349010">Call</a>
+      <a class="btn btn-secondary" href="../pages/start.html?topic=session">Info session</a>
+      <a class="btn" href="../pages/start.html?topic=costs">Enquire</a>
+    </nav>
+  </main>
+
+  <!-- Prototype pager (replaces Cambridge IVF's own footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next" data-proto-pager></nav>
+      <p class="wf-meta">Prototypes for discussion · Prices as published on cambridge-ivf.nhs.uk · Anything marked sample is illustrative · Photography © Cambridge IVF</p>
+    </div>
+  </footer>
+
+  <script src="../js/quick-wins.js"></script>
+  <script src="../js/wireframe.js"></script>
+  <script src="../js/civf.js"></script>
+  <script src="../js/photos.js"></script>
+</body>
+</html>

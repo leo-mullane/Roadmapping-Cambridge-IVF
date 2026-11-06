@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proof you can trust: Cambridge IVF prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Prototype navigator (replaces Cambridge IVF's own header, R01).
+       Two tabs: the five big improvements and the quick wins. -->
+  <header class="sticky site-header proto-nav">
+    <div class="proto-tabs">
+      <div class="container">
+        <nav class="proto-sections" aria-label="Sections">
+          <a href="../index.html" data-section-link="major">Big improvements</a>
+          <a href="../quick-wins/index.html" data-section-link="quick">Quick wins</a>
+        </nav>
+      </div>
+    </div>
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="Cambridge IVF prototypes, overview">Cambridge IVF <span>prototypes</span></a>
+      <nav aria-label="Big improvements" data-section="major">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/costs.html" data-proto="costs"><span class="n">1</span> Clear costs</a></li>
+          <li><a href="../pages/find-your-path.html" data-proto="find-your-path your-journey"><span class="n">2</span> Find your path</a></li>
+          <li><a href="../pages/start.html" data-proto="start"><span class="n">3</span> Start today</a></li>
+          <li><a href="../pages/proof.html" data-proto="proof"><span class="n">4</span> Proof you can trust</a></li>
+          <li><a href="../pages/egg-freezing.html" data-proto="egg-freezing self-pay"><span class="n">5</span> Self-pay services</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Quick wins" data-section="quick" hidden>
+        <ul class="proto-links">
+          <li><a href="../quick-wins/index.html" data-qw-link="index">Overview</a></li>
+          <li class="qw-jump-li"><label class="qw-jump-label" for="qw-jump">Quick win</label>
+            <select id="qw-jump" class="qw-jump" data-qw-jump><option value="">Jump to…</option></select></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 4 of 5 · Proof you can trust</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>A results and people page that does justice to the clinic: the latest HFEA figures with the national average alongside, success by age in both of the HFEA's measures, the team who'll look after you, stories from every kind of family, why an NHS clinic is different, and a simple routine for asking patients to rate the clinic on the HFEA site.</p></div>
+          <div><h2>Why</h2><p>The success rates page uses data from 2019 and 2020, shown as pictures of charts, and the newest patient story mentions 2013. There are no staff profiles. Meanwhile the HFEA, which is where many self-funders shortlist clinics, shows Cambridge IVF with a 5 out of 5 inspection rating and a 2 out of 5 patient rating from only 22 people. Five-year-old numbers read as something to hide, which is a shame, because the current ones are perfectly respectable: 31% of embryos transferred led to a birth in 2024, which the HFEA calls consistent with the national 35%. A few dozen more patient ratings would also move that 2 out of 5.</p></div>
+        </div>
+        <p class="proposal-foot">Headline HFEA figures are real. Figures by age, names and stories are samples to show the layout.</p>
+      </div>
+    </aside>
+
+    <div class="page-head">
+      <div class="container">
+        <p class="cv-eyebrow">About us</p>
+        <h1>Our results, our people</h1>
+        <p class="lead">We've been licensed by the HFEA since 1992. Here are our latest results, set against the national average, and the people behind them.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Headline numbers (R40, idea 21) -->
+      <section class="cv-section" aria-labelledby="hl-title">
+        <h2 class="section-title" id="hl-title">At a glance</h2>
+        <div class="cv-headline">
+          <div class="cv-stat"><b>5 / 5</b>HFEA inspection rating</div>
+          <div class="cv-stat"><b>31%</b>Births per embryo transferred in 2024. National average 35%; the HFEA says we're consistent with it.</div>
+          <div class="cv-stat"><b>Since 1992</b>Licensed by the HFEA; at Kefford House since 2011</div>
+          <div class="cv-stat"><b>2 / 5</b>Patient rating on the HFEA site, from 22 people. <a href="#rate">Help us hear from more of you</a></div>
+        </div>
+        <p class="wf-note query" data-note="1"><span class="wf-note-label">Open question</span>Showing the 2 out of 5 on the clinic's own site is a bold call, and probably the right one alongside an invitation to rate. The alternative is to leave it off and let the HFEA show it anyway.</p>
+      </section>
+
+      <!-- Success by age (R41, idea 21) -->
+      <section class="cv-section" aria-labelledby="rates-title">
+        <div class="row between">
+          <h2 class="section-title" id="rates-title" style="margin:0">Success by age</h2>
+          <div class="row" role="group" aria-label="Measure">
+            <button type="button" class="chip" data-rate="transfer" aria-pressed="true">Per embryo transferred</button>
+            <button type="button" class="chip" data-rate="collection" aria-pressed="false">Per egg collection</button>
+          </div>
+        </div>
+        <div class="cv-split" style="margin-top:1.25rem">
+          <div>
+            <p class="cv-eyebrow" id="rates-label"></p>
+            <div class="cv-bars" id="rates"></div>
+            <div class="cv-legend"><span><i></i>Cambridge IVF</span><span><i class="nat"></i>National average</span><span>Sample figures, to be replaced with the HFEA's</span></div>
+            <details style="margin-top:1rem"><summary>Show as a table</summary><table class="cv-table" id="rates-table" style="margin-top:0.5rem"></table></details>
+          </div>
+          <div class="cv-panel soft">
+            <h3 style="margin-top:0">Reading these numbers</h3>
+            <p class="cv-small">"Per egg collection" counts every transfer from one round of egg collection, fresh and frozen, so it's closer to what one cycle of treatment gives you. Small differences between clinics usually come down to the patients they treat, as the HFEA says. Your consultant can talk about your own chances.</p>
+            <p class="cv-small"><a href="https://www.hfea.gov.uk/choose-a-fertility-clinic/search/results/51/">See our profile on the HFEA website</a></p>
+          </div>
+        </div>
+        <p class="wf-note" data-note="2"><span class="wf-note-label">Behaviour</span>Real HTML bars and a table, not images, so screen readers can read them and an editor can update the figures each year without a designer.</p>
+      </section>
+
+      <!-- Why an NHS clinic (R42, idea 26) -->
+      <section class="cv-section" aria-labelledby="nhs-title">
+        <h2 class="section-title" id="nhs-title">Why an NHS clinic?</h2>
+        <div class="cv-proof4">
+          <div class="card"><h3 class="card-title">Care that carries on</h3><p class="card-text">From your first scan to the Rosie maternity hospital, all within Cambridge University Hospitals.</p></div>
+          <div class="card"><h3 class="card-title">Specialists on hand</h3><p class="card-text">Access to CUH genetics, the East of England's centre for inherited conditions.</p></div>
+          <div class="card"><h3 class="card-title">Support when you need it</h3><p class="card-text">Independent counselling within two weeks, within 24 hours if it's urgent.</p></div>
+          <div class="card"><h3 class="card-title">Money that stays in the NHS</h3><p class="card-text">What you pay is reinvested in CUH's women's and children's services.</p></div>
+        </div>
+      </section>
+
+      <!-- Team (R43, idea 25) -->
+      <section class="cv-section" aria-labelledby="team-title">
+        <div class="row between">
+          <h2 class="section-title" id="team-title" style="margin:0">The people who'll look after you</h2>
+          <div class="row" role="group" aria-label="Filter by role">
+            <button type="button" class="chip" data-role-filter="all" aria-pressed="true">Everyone</button>
+            <button type="button" class="chip" data-role-filter="consultant" aria-pressed="false">Consultants</button>
+            <button type="button" class="chip" data-role-filter="embryologist" aria-pressed="false">Embryologists</button>
+            <button type="button" class="chip" data-role-filter="nurse" aria-pressed="false">Nurses</button>
+            <button type="button" class="chip" data-role-filter="support" aria-pressed="false">Counselling and patient team</button>
+          </div>
+        </div>
+        <div class="cv-people" style="margin-top:1.25rem">
+          <button type="button" class="cv-person" data-person data-role="consultant" data-name="Dr Chris White" data-role-label="Service Lead" data-bio="[Short biography, special interests and a line in their own words, supplied by the clinic.]"><span class="wf-placeholder ratio-4-3" data-photo="chris">Photo</span><div><b>Dr Chris White</b><span>Service Lead</span></div></button>
+          <button type="button" class="cv-person" data-person data-role="consultant" data-name="Dr Alka Prakash" data-role-label="Lead Clinician" data-bio="[Short biography, special interests and a line in their own words, supplied by the clinic.]"><span class="wf-placeholder ratio-4-3">Photo</span><div><b>Dr Alka Prakash</b><span>Lead Clinician</span></div></button>
+          <button type="button" class="cv-person" data-person data-role="embryologist" data-name="[Name]" data-role-label="Lead Embryologist" data-bio="[Runs the Tuesday information sessions. Biography to be supplied.]"><span class="wf-placeholder ratio-4-3">Photo</span><div><b>[Name]</b><span>Lead Embryologist</span></div></button>
+          <button type="button" class="cv-person" data-person data-role="embryologist" data-name="[Name]" data-role-label="Embryologist" data-bio="[Biography to be supplied.]"><span class="wf-placeholder ratio-4-3">Photo</span><div><b>[Name]</b><span>Embryologist</span></div></button>
+          <button type="button" class="cv-person" data-person data-role="nurse" data-name="[Name]" data-role-label="Lead Nurse" data-bio="[Biography to be supplied.]"><span class="wf-placeholder ratio-4-3">Photo</span><div><b>[Name]</b><span>Lead Nurse</span></div></button>
+          <button type="button" class="cv-person" data-person data-role="support" data-name="[Name]" data-role-label="Fertility Counsellor" data-bio="[Biography to be supplied.]"><span class="wf-placeholder ratio-4-3">Photo</span><div><b>[Name]</b><span>Fertility Counsellor</span></div></button>
+          <button type="button" class="cv-person" data-person data-role="support" data-name="[Name]" data-role-label="Finance Manager" data-bio="[Talks through costs at every information session. Biography to be supplied.]"><span class="wf-placeholder ratio-4-3">Photo</span><div><b>[Name]</b><span>Finance Manager</span></div></button>
+        </div>
+        <div class="cv-modal" id="person-modal" role="dialog" aria-modal="true" aria-labelledby="pm-name" hidden>
+          <div class="cv-modal-panel">
+            <span class="wf-placeholder ratio-1-1">Photo</span>
+            <div>
+              <button type="button" class="wf-modal-close" id="pm-close" aria-label="Close">×</button>
+              <h2 id="pm-name" class="section-title" style="margin-bottom:0.25rem"></h2>
+              <p class="cv-muted" id="pm-role"></p>
+              <p id="pm-bio"></p>
+              <a class="btn btn-sm" href="../pages/start.html?topic=session">Meet the team at an information session</a>
+            </div>
+          </div>
+        </div>
+        <p class="wf-note query" data-note="3"><span class="wf-note-label">Open question</span>The two named people appear on the live site today. Everyone else is a placeholder. Which staff are happy to have a profile and photo?</p>
+      </section>
+
+      <!-- Stories (R44, idea 23) -->
+      <section class="cv-section" aria-labelledby="st-title">
+        <div class="row between">
+          <h2 class="section-title" id="st-title" style="margin:0">Stories from our families</h2>
+          <div class="row" role="group" aria-label="Filter stories">
+            <button type="button" class="chip" data-story-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="chip" data-story-filter="couple" aria-pressed="false">Couples</button>
+            <button type="button" class="chip" data-story-filter="female" aria-pressed="false">Female couples</button>
+            <button type="button" class="chip" data-story-filter="single" aria-pressed="false">Single parents</button>
+            <button type="button" class="chip" data-story-filter="freezing" aria-pressed="false">Egg freezing</button>
+          </div>
+        </div>
+        <div class="cv-stories" style="margin-top:1.25rem">
+          <article class="cv-story" data-story="couple"><span class="wf-placeholder ratio-16-9">Photo or video</span><span class="badge">IVF · PURE Duo</span><blockquote>[A short quote from a couple, in their own words, with permission.]</blockquote><a href="#st-title">Read their story</a></article>
+          <article class="cv-story" data-story="female"><span class="wf-placeholder ratio-16-9">Photo or video</span><span class="badge">Shared Motherhood</span><blockquote>[A short quote from a female couple.]</blockquote><a href="#st-title">Read their story</a></article>
+          <article class="cv-story" data-story="single"><span class="wf-placeholder ratio-16-9">Photo or video</span><span class="badge">Donor IUI</span><blockquote>[A short quote from a single mother by choice.]</blockquote><a href="#st-title">Read her story</a></article>
+          <article class="cv-story" data-story="freezing"><span class="wf-placeholder ratio-16-9">Photo or video</span><span class="badge">Egg freezing</span><blockquote>[A short quote from someone who froze her eggs.]</blockquote><a href="#st-title">Read her story</a></article>
+          <article class="cv-story" data-story="couple"><span class="wf-placeholder ratio-16-9">Photo or video</span><span class="badge">Moved from another clinic</span><blockquote>[A short quote from a couple who moved their care.]</blockquote><a href="#st-title">Read their story</a></article>
+        </div>
+      </section>
+
+      <!-- Rate us (R45, idea 24) -->
+      <section class="cv-section" id="rate" aria-labelledby="rate-title">
+        <h2 class="section-title" id="rate-title">Tell others what it was like</h2>
+        <div class="cv-split">
+          <div>
+            <p>The HFEA asks patients to rate their clinic, and other people use those ratings to choose. Whatever your experience, it helps. It takes about two minutes.</p>
+            <a class="btn" href="https://www.hfea.gov.uk/choose-a-fertility-clinic/search/results/51/">Rate Cambridge IVF on the HFEA site</a>
+          </div>
+          <div>
+            <div class="cv-card-qr"><span class="wf-placeholder ratio-1-1">QR code</span><div><b>How was your care?</b><p class="cv-small">Scan to rate us on the HFEA website. It takes two minutes and helps others choose.</p></div></div>
+            <p class="wf-note" data-note="4"><span class="wf-note-label">Behaviour</span>The same card is handed out at every review appointment and repeated in a follow-up email a week later. With only 22 ratings, a few dozen more will move the score.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Prototype pager (replaces Cambridge IVF's own footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next" data-proto-pager></nav>
+      <p class="wf-meta">Prototypes for discussion · Prices as published on cambridge-ivf.nhs.uk · Anything marked sample is illustrative · Photography © Cambridge IVF</p>
+    </div>
+  </footer>
+
+  <script src="../js/quick-wins.js"></script>
+  <script src="../js/wireframe.js"></script>
+  <script src="../js/civf.js"></script>
+  <script src="../js/photos.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update the NHS funding page: Cambridge IVF quick wins</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body data-qw-theme="start">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Prototype navigator (replaces Cambridge IVF's own header, R01).
+       Two tabs: the five big improvements and the quick wins. -->
+  <header class="sticky site-header proto-nav">
+    <div class="proto-tabs">
+      <div class="container">
+        <nav class="proto-sections" aria-label="Sections">
+          <a href="../index.html" data-section-link="major">Big improvements</a>
+          <a href="../quick-wins/index.html" data-section-link="quick">Quick wins</a>
+        </nav>
+      </div>
+    </div>
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="Cambridge IVF prototypes, overview">Cambridge IVF <span>prototypes</span></a>
+      <nav aria-label="Big improvements" data-section="major">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/costs.html" data-proto="costs"><span class="n">1</span> Clear costs</a></li>
+          <li><a href="../pages/find-your-path.html" data-proto="find-your-path your-journey"><span class="n">2</span> Find your path</a></li>
+          <li><a href="../pages/start.html" data-proto="start"><span class="n">3</span> Start today</a></li>
+          <li><a href="../pages/proof.html" data-proto="proof"><span class="n">4</span> Proof you can trust</a></li>
+          <li><a href="../pages/egg-freezing.html" data-proto="egg-freezing self-pay"><span class="n">5</span> Self-pay services</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Quick wins" data-section="quick" hidden>
+        <ul class="proto-links">
+          <li><a href="../quick-wins/index.html" data-qw-link="index">Overview</a></li>
+          <li class="qw-jump-li"><label class="qw-jump-label" for="qw-jump">Quick win</label>
+            <select id="qw-jump" class="qw-jump" data-qw-jump><option value="">Jump to…</option></select></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="main" class="flush">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 8 of 22 · Getting started</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Replace the CCG-era copy with the current ICB position, a short eligibility summary and a clear self-funded route for people who don’t qualify.</p></div>
+          <div><h2>Why</h2><p>The page says Cambridge and Peterborough CCG “have recently announced” that NHS IVF is returning and that details will be “added here as soon as they are available”. CCGs were replaced by integrated care boards in July 2022. People who discover they aren’t NHS-eligible are the clinic’s next self-funded patients, if the page catches them with an alternative rather than a dead end.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Quick win QW8 (idea 28): Update the NHS funding page -->
+    <div class="container qw-head">
+      <p class="qw-num">Quick win 8 · Getting started</p>
+      <h1>Update the NHS funding page</h1>
+      <p class="lead">Replace the CCG-era copy with the current ICB position, a short eligibility summary and a clear self-funded route for people who don’t qualify.</p>
+      <p class="qw-where">Also part of big improvement 2, Find your path.</p>
+    </div>
+
+    <div data-ba>
+      <div class="ba-bar">
+        <div class="container">
+          <div class="ba-switch" role="group" aria-label="Compare">
+            <button type="button" data-ba-show="before" aria-pressed="true">Today</button>
+            <button type="button" data-ba-show="after" aria-pressed="false">Proposed</button>
+          </div>
+          <span class="ba-hint">Switch between the site as it is today and the change. Arrow keys work too.</span>
+        </div>
+      </div>
+      <div class="container ba-stage">
+        <div class="ba-before">
+          <p class="ba-caption"><b>Today</b><span>Out-of-date funding news and no alternative.</span></p>
+          <div class="ba-frame"><div class="ba-frame-bar"><i></i><i></i><i></i><span>cambridge-ivf.nhs.uk/referrals/self-funded-referrals/</span></div>
+            <div class="ba-frame-body">
+<div class="cv-mock-head"><span class="logo">Cambridge IVF</span><span class="cv-mock-nav"><span>About us</span><span>Services</span><span>Prices</span><span>Referrals</span><span>Success rates</span><span>Contact us</span></span></div><div class="cv-mock-hero "><h2>NHS / Self-funded referrals</h2></div><div class="cv-mock-body"><p>Cambridge IVF accepts self-funded patients from anywhere and NHS funded patients from the East of England, Hertfordshire and West Essex. <span class="cv-mark">Cambridge and Peterborough CCG have recently announced that they are to re-introduce NHS funded IVF – further details regarding eligibility criteria to be added here as soon as they are available.</span></p></div>
+            </div>
+          </div>
+        </div>
+        <div class="ba-after" hidden>
+          <p class="ba-caption"><b>Proposed</b><span>Who funds what today, and what to do if you’re not eligible.</span></p>
+          <div class="ba-frame"><div class="ba-frame-bar"><i></i><i></i><i></i><span>cambridge-ivf.nhs.uk/referrals/self-funded-referrals/</span></div>
+            <div class="ba-frame-body">
+<div class="cv-mock-head"><span class="logo">Cambridge IVF</span><span class="cv-mock-nav"><span>About us</span><span>Services</span><span>Prices</span><span>Referrals</span><span>Success rates</span><span>Contact us</span></span></div><div class="cv-mock-hero "><h2>NHS-funded and self-funded treatment</h2></div><div class="cv-mock-body"><p>NHS funding for IVF is decided by the integrated care board (ICB) for the area where your GP is.</p><table class="cv-table"><thead><tr><th>Your GP is in</th><th>NHS IVF</th></tr></thead><tbody><tr><td>Cambridgeshire and Peterborough</td><td>[Current criteria and link]</td></tr><tr><td>Hertfordshire and West Essex</td><td>[Current criteria and link]</td></tr><tr><td>Suffolk and North East Essex</td><td>[Current criteria and link]</td></tr></tbody></table><div class="cv-panel soft" style="margin-top:1rem"><b>Not eligible?</b> Self-funded IVF starts at £2,900. <a href="#">See packages and prices</a></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Prototype pager (replaces Cambridge IVF's own footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next" data-proto-pager></nav>
+      <p class="wf-meta">Prototypes for discussion · Prices as published on cambridge-ivf.nhs.uk · Anything marked sample is illustrative · Photography © Cambridge IVF</p>
+    </div>
+  </footer>
+
+  <script src="../js/quick-wins.js"></script>
+  <script src="../js/wireframe.js"></script>
+  <script src="../js/civf.js"></script>
+  <script src="../js/photos.js"></script>
+</body>
+</html>

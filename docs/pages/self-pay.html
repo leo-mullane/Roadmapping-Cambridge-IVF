@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Self-pay services: Cambridge IVF prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Prototype navigator (replaces Cambridge IVF's own header, R01).
+       Two tabs: the five big improvements and the quick wins. -->
+  <header class="sticky site-header proto-nav">
+    <div class="proto-tabs">
+      <div class="container">
+        <nav class="proto-sections" aria-label="Sections">
+          <a href="../index.html" data-section-link="major">Big improvements</a>
+          <a href="../quick-wins/index.html" data-section-link="quick">Quick wins</a>
+        </nav>
+      </div>
+    </div>
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="Cambridge IVF prototypes, overview">Cambridge IVF <span>prototypes</span></a>
+      <nav aria-label="Big improvements" data-section="major">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/costs.html" data-proto="costs"><span class="n">1</span> Clear costs</a></li>
+          <li><a href="../pages/find-your-path.html" data-proto="find-your-path your-journey"><span class="n">2</span> Find your path</a></li>
+          <li><a href="../pages/start.html" data-proto="start"><span class="n">3</span> Start today</a></li>
+          <li><a href="../pages/proof.html" data-proto="proof"><span class="n">4</span> Proof you can trust</a></li>
+          <li><a href="../pages/egg-freezing.html" data-proto="egg-freezing self-pay"><span class="n">5</span> Self-pay services</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Quick wins" data-section="quick" hidden>
+        <ul class="proto-links">
+          <li><a href="../quick-wins/index.html" data-qw-link="index">Overview</a></li>
+          <li class="qw-jump-li"><label class="qw-jump-label" for="qw-jump">Quick win</label>
+            <select id="qw-jump" class="qw-jump" data-qw-jump><option value="">Jump to…</option></select></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 5 of 5 · Self-pay services</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Three services people pay for directly, moved online: booking and paying for a private semen analysis with the current wait shown at the point of booking, a short eligibility pre-screen for would-be sperm donors, and a page to pay storage fees with a reference number.</p></div>
+          <div><h2>Why</h2><p>The andrology service runs more than 500 semen analyses a month across three labs, with waits of 26 to 34 working days, and private tests are booked by phone on a dedicated line. The sperm donor questionnaire is a PDF to print and post, at a time when donor sperm is in short supply and each donor supports several treatment cycles. Storage at £346 a year is recurring income, and there's no way to pay it online that we could see. Each of these swaps a phone call or a letter for something that works at 10pm, and Guy's and St Thomas' already takes payments through GOV.UK Pay.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="page-head">
+      <div class="container">
+        <h1>Book and pay online</h1>
+        <p class="lead">Book a private semen analysis, find out if you could become a sperm donor, or pay your storage fees.</p>
+      </div>
+    </div>
+
+    <div class="container" style="padding-top:1.5rem">
+      <div class="tabs" role="tablist" aria-label="Services">
+        <button type="button" class="tab active" data-tab="tab-sa" aria-selected="true">Semen analysis</button>
+        <button type="button" class="tab" data-tab="tab-donor" aria-selected="false">Become a sperm donor</button>
+        <button type="button" class="tab" data-tab="tab-pay" aria-selected="false">Pay storage fees</button>
+      </div>
+      <div>
+        <!-- Semen analysis booking (R51, idea 37) -->
+        <div class="tab-panel active" id="tab-sa" role="tabpanel">
+          <div class="cv-split">
+            <div>
+              <h2 class="section-title">Book a private semen analysis</h2>
+              <div class="cv-form" style="max-width:none">
+                <div class="two">
+                  <div class="field"><label for="sa-test">Test</label><select id="sa-test"><option value="diag">Diagnostic semen analysis, £189</option><option value="pv">Post-vasectomy analysis, £189</option><option value="dna">DNA fragmentation test, £462</option></select></div>
+                  <div class="field"><label for="sa-loc">Where</label><select id="sa-loc"><option value="cambridge">Cambridge</option><option value="ipswich">Ipswich</option><option value="peterborough">Peterborough</option></select></div>
+                </div>
+              </div>
+              <div class="cv-panel soft" style="margin:0.5rem 0 1rem">
+                <p style="margin:0">Current wait: <b id="sa-wait"></b> · earliest appointment <b id="sa-first"></b> · <b id="sa-price"></b></p>
+                <p class="field-error" id="sa-dna-warn" hidden>The DNA fragmentation test is only available in Cambridge and Ipswich.</p>
+              </div>
+              <h3 style="font-size:1rem">Choose a day</h3>
+              <div class="cv-days" id="sa-dates" role="group" aria-label="Choose a day"></div>
+              <form id="sa-book" class="cv-form" novalidate>
+                <div id="sa-pay" hidden>
+                  <p><b id="sa-when"></b></p>
+                  <div class="two">
+                    <div class="field"><label for="sa-name">Name</label><input id="sa-name" data-req autocomplete="name"><p class="field-error" id="sa-name-err" hidden>Enter your name</p></div>
+                    <div class="field"><label for="sa-email">Email for your report</label><input id="sa-email" type="email" data-req autocomplete="email"><p class="field-error" id="sa-email-err" hidden>Enter a valid email address</p></div>
+                  </div>
+                  <p class="cv-small">Next, you'd pay securely on the NHS payment page. Your report is emailed to you within 10 working days of the test.</p>
+                  <button class="btn" type="submit">Continue to payment</button>
+                </div>
+              </form>
+              <div class="cv-confirm" id="sa-done" tabindex="-1" hidden>
+                <h2 class="section-title">Booked and paid</h2>
+                <p><b id="sa-done-when"></b>. We've emailed your confirmation and instructions for the day. (Prototype: no payment is taken.)</p>
+              </div>
+            </div>
+            <div>
+              <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Waits come from the same figures as the live "Wait times" page (Cambridge 26, Ipswich 34, Peterborough 32 working days), so updating that page updates the booking.</p>
+              <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>Which booking and payment tools does CUH already use for other outpatient services? Reusing one is quicker than buying a new one.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Donor pre-screen (R52, idea 38) -->
+        <div class="tab-panel" id="tab-donor" role="tabpanel">
+          <div class="cv-split">
+            <div>
+              <h2 class="section-title">Could you become a sperm donor?</h2>
+              <p>Three quick questions to see if you could be a good fit. Donors may receive a cycle of PURE IVF at no cost.</p>
+              <form id="donor" class="cv-form" novalidate>
+                <div class="field" style="max-width:200px"><label for="dn-age">Your age</label><input id="dn-age" type="number" inputmode="numeric" min="16" max="80"></div>
+                <fieldset class="cv-q"><legend>Have you smoked in the last three months?</legend><div class="cv-opts"><span class="cv-opt"><input type="radio" name="dn-smoke" id="dn-s-n" value="no"><label for="dn-s-n">No</label></span><span class="cv-opt"><input type="radio" name="dn-smoke" id="dn-s-y" value="yes"><label for="dn-s-y">Yes</label></span></div></fieldset>
+                <fieldset class="cv-q"><legend>Is there a history of genetic conditions in your family?</legend><div class="cv-opts"><span class="cv-opt"><input type="radio" name="dn-fam" id="dn-f-n" value="no"><label for="dn-f-n">No</label></span><span class="cv-opt"><input type="radio" name="dn-fam" id="dn-f-y" value="yes"><label for="dn-f-y">Yes</label></span><span class="cv-opt"><input type="radio" name="dn-fam" id="dn-f-u" value="yes"><label for="dn-f-u">Not sure</label></span></div></fieldset>
+                <p class="field-error" id="dn-err" tabindex="-1" hidden>Please answer all three questions.</p>
+                <div><button class="btn" type="submit">Check</button></div>
+              </form>
+              <div class="cv-result" id="dn-result" tabindex="-1" hidden>
+                <p id="dn-text"></p>
+                <form id="dn-contact" class="cv-form" novalidate hidden>
+                  <div class="two">
+                    <div class="field"><label for="dn-name">Name</label><input id="dn-name" data-req autocomplete="name"><p class="field-error" id="dn-name-err" hidden>Enter your name</p></div>
+                    <div class="field"><label for="dn-phone">Phone</label><input id="dn-phone" type="tel" data-req="phone" autocomplete="tel"><p class="field-error" id="dn-phone-err" hidden>Enter a phone number</p></div>
+                  </div>
+                  <div><button class="btn" type="submit">Ask the donor team to call me</button></div>
+                </form>
+              </div>
+            </div>
+            <div>
+              <p class="wf-note" data-note="3"><span class="wf-note-label">Behaviour</span>Replaces the printable PDF questionnaire. Criteria follow the live sperm donation page (18 to 45, non-smoker for three months, no family history of genetic conditions). "Not sure" is treated as a conversation with the team, not a firm no, in the real thing.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Storage payment (R53, idea 39) -->
+        <div class="tab-panel" id="tab-pay" role="tabpanel">
+          <div class="cv-split">
+            <div>
+              <h2 class="section-title">Pay your storage fees</h2>
+              <form id="pay-form" class="cv-form" novalidate>
+                <div class="field"><label for="pay-ref">Your reference</label><input id="pay-ref" data-req placeholder="For example CIVF-12345"><p class="field-hint">It's on your renewal letter or email. Try CIVF-12345.</p><p class="field-error" id="pay-ref-err" hidden>We can't find that reference</p></div>
+                <div class="cv-panel soft" id="pay-found" hidden>
+                  <p style="margin:0"><b>Annual egg storage</b>, renewal due [date]</p>
+                  <p class="cv-price" style="margin:0.25rem 0">£346</p>
+                </div>
+                <div class="field"><label for="pay-email">Email for your receipt</label><input id="pay-email" type="email" data-req autocomplete="email"><p class="field-error" id="pay-email-err" hidden>Enter a valid email address</p></div>
+                <div><button class="btn" type="submit">Continue to payment</button></div>
+              </form>
+              <div class="cv-confirm" id="pay-done" tabindex="-1" hidden>
+                <h2 class="section-title">Payment received</h2>
+                <p>Your storage is renewed for another year and your receipt is on its way. (Prototype: no payment is taken.)</p>
+              </div>
+            </div>
+            <div>
+              <p class="wf-note" data-note="4"><span class="wf-note-label">Behaviour</span>The reference is checked, the amount due shown, and payment handed to GOV.UK Pay or the Trust's own provider. The same page could take admin fees such as gamete transport (£247 in the UK).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Prototype pager (replaces Cambridge IVF's own footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next" data-proto-pager></nav>
+      <p class="wf-meta">Prototypes for discussion · Prices as published on cambridge-ivf.nhs.uk · Anything marked sample is illustrative · Photography © Cambridge IVF</p>
+    </div>
+  </footer>
+
+  <script src="../js/quick-wins.js"></script>
+  <script src="../js/wireframe.js"></script>
+  <script src="../js/civf.js"></script>
+  <script src="../js/photos.js"></script>
+</body>
+</html>

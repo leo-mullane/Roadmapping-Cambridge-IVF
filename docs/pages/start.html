@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start today: Cambridge IVF prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Prototype navigator (replaces Cambridge IVF's own header, R01).
+       Two tabs: the five big improvements and the quick wins. -->
+  <header class="sticky site-header proto-nav">
+    <div class="proto-tabs">
+      <div class="container">
+        <nav class="proto-sections" aria-label="Sections">
+          <a href="../index.html" data-section-link="major">Big improvements</a>
+          <a href="../quick-wins/index.html" data-section-link="quick">Quick wins</a>
+        </nav>
+      </div>
+    </div>
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="Cambridge IVF prototypes, overview">Cambridge IVF <span>prototypes</span></a>
+      <nav aria-label="Big improvements" data-section="major">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/costs.html" data-proto="costs"><span class="n">1</span> Clear costs</a></li>
+          <li><a href="../pages/find-your-path.html" data-proto="find-your-path your-journey"><span class="n">2</span> Find your path</a></li>
+          <li><a href="../pages/start.html" data-proto="start"><span class="n">3</span> Start today</a></li>
+          <li><a href="../pages/proof.html" data-proto="proof"><span class="n">4</span> Proof you can trust</a></li>
+          <li><a href="../pages/egg-freezing.html" data-proto="egg-freezing self-pay"><span class="n">5</span> Self-pay services</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Quick wins" data-section="quick" hidden>
+        <ul class="proto-links">
+          <li><a href="../quick-wins/index.html" data-qw-link="index">Overview</a></li>
+          <li class="qw-jump-li"><label class="qw-jump-label" for="qw-jump">Quick win</label>
+            <select id="qw-jump" class="qw-jump" data-qw-jump><option value="">Jump to…</option></select></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 3 of 5 · Start today</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>One place to take the first step, in whichever way suits the person: a short enquiry, a free call with the patient team at a time they choose, a place at an information session, or a full self-referral with their previous results attached. Each ends with a clear "what happens next". A guide sign-up catches the people who aren't ready yet.</p></div>
+          <div><h2>Why</h2><p>There isn't a single form on the site. Self-referral is "by email or post", appointments are by phone, and the information sessions are booked on a separate site with no date shown on the homepage. Most people research fertility treatment in the evening, when the phone lines are closed. Every competitor we looked at takes enquiries on the page, and Bourn Hall, ten miles away, makes "Book a discovery call" its main button. This is the change most likely to bring in more patients, and the one that lets the clinic count them for the first time.</p></div>
+        </div>
+        <p class="proposal-foot">Because enquiries contain health information, the real thing should use a form tool the Trust already approves, with a data protection impact assessment.</p>
+      </div>
+    </aside>
+
+    <div class="page-head">
+      <div class="container">
+        <h1>Start today</h1>
+        <p class="lead">Ask a question, book a free call, come to an information session or refer yourself. Whatever you choose, a real person from our patient team will pick it up.</p>
+        <p class="wf-meta" id="enq-pkg" hidden></p>
+      </div>
+    </div>
+
+    <div class="container" style="padding-top:1.5rem">
+      <div class="tabs" role="tablist" aria-label="Ways to get started">
+        <button type="button" class="tab active" data-tab="tab-enquire" aria-selected="true">Send an enquiry</button>
+        <button type="button" class="tab" data-tab="tab-call" aria-selected="false">Book a free call</button>
+        <button type="button" class="tab" data-tab="tab-sessions" aria-selected="false">Information sessions</button>
+        <button type="button" class="tab" data-tab="tab-refer" aria-selected="false">Refer yourself</button>
+      </div>
+      <div>
+        <!-- Short enquiry (R30, idea 9) -->
+        <div class="tab-panel active" id="tab-enquire" role="tabpanel">
+          <div class="cv-split">
+            <div>
+              <form id="enquiry" class="cv-form" novalidate>
+                <div class="two">
+                  <div class="field"><label for="enq-name">Your name</label><input id="enq-name" data-req autocomplete="name"><p class="field-error" id="enq-name-err" hidden>Enter your name</p></div>
+                  <div class="field"><label for="enq-email">Email</label><input id="enq-email" type="email" data-req autocomplete="email"><p class="field-error" id="enq-email-err" hidden>Enter a valid email address</p></div>
+                </div>
+                <div class="two">
+                  <div class="field"><label for="enq-phone">Phone (optional)</label><input id="enq-phone" type="tel" autocomplete="tel"></div>
+                  <div class="field"><label for="enq-fund">How would you pay?</label><select id="enq-fund"><option>Self-funded</option><option>NHS-funded</option><option>Not sure yet</option></select></div>
+                </div>
+                <div class="field"><label for="enq-topic">What are you interested in?</label><select id="enq-topic"><option value="ivf">IVF or IUI</option><option value="egg">Egg freezing</option><option value="preserve">Fertility preservation</option><option value="andrology">Semen analysis</option><option value="donor">Donor eggs or sperm</option><option value="nhs">NHS funding</option><option value="switch">Moving from another clinic</option><option value="">Something else</option></select></div>
+                <div class="field"><label for="enq-msg">Anything you'd like us to know (optional)</label><textarea id="enq-msg" rows="3"></textarea><p class="field-hint">Please don't include detailed medical information here. We'll ask for it securely if we need it.</p></div>
+                <div class="field"><label class="check"><input type="checkbox" id="enq-consent" data-req> I agree to Cambridge IVF contacting me about my enquiry</label><p class="field-error" id="enq-consent-err" hidden>We need your agreement to reply</p></div>
+                <div><button class="btn" type="submit">Send enquiry</button></div>
+              </form>
+              <div class="cv-confirm" id="enq-done" tabindex="-1" hidden>
+                <h2 class="section-title">Thanks, <span id="enq-name-out"></span>.</h2>
+                <p>We've got your enquiry. Someone from the patient team will call or email within one working day. (Prototype: nothing is sent.)</p>
+                <h3 style="font-size:1rem">While you wait</h3>
+                <ul class="cv-list"><li><a href="../pages/costs.html">Estimate your cost</a></li><li><a href="../pages/your-journey.html">See what happens, step by step</a></li><li><button type="button" class="btn-link" data-tab-jump="tab-sessions">Book an information session</button></li></ul>
+              </div>
+            </div>
+            <div>
+              <div class="cv-panel soft">
+                <h3 style="margin-top:0">Prefer to talk?</h3>
+                <p>Call 01223 349010<br>The clinic opens at 7.45am on weekdays, until 6.15pm on Tuesdays and Thursdays</p>
+                <p class="cv-small">Questions for the nurses: add-tr.ivfnurses@nhs.net</p>
+              </div>
+              <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Five required fields. If the person arrived from the cost estimator or a "Who are you" route, the package or topic is filled in for them and sent with the enquiry.</p>
+              <p class="wf-note" data-note="2"><span class="wf-note-label">Behaviour</span>Each submission fires a GA4 event, so the clinic can see which pages produce enquiries. Google Tag Manager is already installed on the live site.</p>
+              <p class="wf-note query" data-note="3"><span class="wf-note-label">Open question</span>"Within one working day" is a promise the patient team has to be able to keep. What's realistic?</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Book a call (R31, idea 10) -->
+        <div class="tab-panel" id="tab-call" role="tabpanel">
+          <div class="cv-split">
+            <div>
+              <h2 class="section-title">Book a free 15-minute call</h2>
+              <p>A no-obligation chat with our patient team about where you are and what might come next. Choose a day, then a time.</p>
+              <div class="cv-days" id="call-days" role="group" aria-label="Choose a day"></div>
+              <h3 id="call-slot-h" style="font-size:1rem" hidden>Choose a time</h3>
+              <div class="cv-slots" id="call-slots" role="group" aria-label="Choose a time"></div>
+              <form id="call-form" class="cv-form" style="margin-top:1.25rem" novalidate hidden>
+                <p><b id="call-when"></b></p>
+                <div class="two">
+                  <div class="field"><label for="call-name">Name</label><input id="call-name" data-req autocomplete="name"><p class="field-error" id="call-name-err" hidden>Enter your name</p></div>
+                  <div class="field"><label for="call-phone">Phone number</label><input id="call-phone" type="tel" data-req="phone" autocomplete="tel"><p class="field-error" id="call-phone-err" hidden>Enter a phone number we can call</p></div>
+                </div>
+                <div><button class="btn" type="submit">Book call</button></div>
+              </form>
+              <div class="cv-confirm" id="call-done" tabindex="-1" hidden>
+                <h2 class="section-title">Your call is booked</h2>
+                <p>We'll call you on <b id="call-done-when"></b>. You'll get a reminder by text the day before. (Prototype: nothing is sent.)</p>
+              </div>
+            </div>
+            <div>
+              <p class="wf-note" data-note="4"><span class="wf-note-label">Behaviour</span>Slots come from the patient team's calendar through a booking tool; taken slots are struck through. Later, the same tool could take paid bookings for a consultation (£220) or a fertility assessment.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Information sessions (R32, idea 11) -->
+        <div class="tab-panel" id="tab-sessions" role="tabpanel">
+          <div class="cv-split">
+            <div>
+              <h2 class="section-title">Free information sessions</h2>
+              <p>Ask anything, privately, of the people who'll look after you: an embryologist, a fertility nurse and our finance manager. Sessions run on Tuesday evenings by phone, with an occasional open evening at the clinic.</p>
+              <ul class="cv-sessions" id="sessions"></ul>
+            </div>
+            <div>
+              <p class="wf-note" data-note="5"><span class="wf-note-label">Behaviour</span>Dates are the next three Tuesdays, worked out on the day. Booking happens on the page, with the same booking tool behind it, rather than sending people to a separate site.</p>
+              <p class="wf-note query" data-note="6"><span class="wf-note-label">Open question</span>The in-person open evening is a new idea. Bourn Hall runs one in Cambridge and Herts &amp; Essex puts its next date on its homepage. Would the team run one at Kefford House every couple of months?</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Self-referral (R33, idea 9) -->
+        <div class="tab-panel" id="tab-refer" role="tabpanel">
+          <div class="cv-split">
+            <div>
+              <h2 class="section-title">Refer yourself for self-funded treatment</h2>
+              <ol class="cv-progress" id="ref-progress"><li>About you</li><li>Your history</li><li>Your results</li></ol>
+              <form id="referral" class="cv-form" novalidate>
+                <div data-ref-step>
+                  <h3>About you</h3>
+                  <div class="two">
+                    <div class="field"><label for="rf-name">Full name</label><input id="rf-name" data-req autocomplete="name"><p class="field-error" id="rf-name-err" hidden>Enter your full name</p></div>
+                    <div class="field"><label for="rf-dob">Date of birth</label><input id="rf-dob" type="date" data-req><p class="field-error" id="rf-dob-err" hidden>Enter your date of birth</p></div>
+                  </div>
+                  <div class="two">
+                    <div class="field"><label for="rf-email">Email</label><input id="rf-email" type="email" data-req autocomplete="email"><p class="field-error" id="rf-email-err" hidden>Enter a valid email address</p></div>
+                    <div class="field"><label for="rf-phone">Phone</label><input id="rf-phone" type="tel" data-req="phone" autocomplete="tel"><p class="field-error" id="rf-phone-err" hidden>Enter a phone number</p></div>
+                  </div>
+                  <div class="field"><label for="rf-partner">Partner's name, if you're being treated together (optional)</label><input id="rf-partner"></div>
+                  <button class="btn" type="button" data-ref-next>Continue</button>
+                </div>
+                <div data-ref-step hidden>
+                  <h3>Your history</h3>
+                  <div class="field"><label for="rf-trying">How long have you been trying to conceive?</label><select id="rf-trying" data-req><option value="">Choose</option><option>Not trying yet</option><option>Less than a year</option><option>1 to 2 years</option><option>More than 2 years</option><option>Not applicable</option></select><p class="field-error" id="rf-trying-err" hidden>Choose an option</p></div>
+                  <div class="field"><label for="rf-prev">Previous fertility treatment</label><select id="rf-prev"><option>None</option><option>IUI</option><option>IVF or ICSI</option><option>Treatment at another clinic, ongoing</option></select></div>
+                  <div class="field"><label for="rf-gp">GP surgery</label><input id="rf-gp" data-req><p class="field-error" id="rf-gp-err" hidden>Enter your GP surgery</p></div>
+                  <div class="row"><button class="btn btn-secondary" type="button" data-ref-back>Back</button><button class="btn" type="button" data-ref-next>Continue</button></div>
+                </div>
+                <div data-ref-step hidden>
+                  <h3>Your results</h3>
+                  <p>Attach any results you have: hormone blood tests, a semen analysis, scans, letters from other clinics. If you don't have any, that's fine; we'll arrange the tests you need.</p>
+                  <div class="field"><label for="ref-files">Upload files (PDF or photos)</label><input id="ref-files" type="file" multiple accept=".pdf,image/*"><p class="field-hint" id="ref-file-list">No files chosen</p></div>
+                  <div class="field"><label class="check"><input type="checkbox" id="rf-consent" data-req> I agree to Cambridge IVF holding this information to assess my referral</label><p class="field-error" id="rf-consent-err" hidden>We need your agreement to process the referral</p></div>
+                  <div class="row"><button class="btn btn-secondary" type="button" data-ref-back>Back</button><button class="btn" type="submit">Send referral</button></div>
+                </div>
+              </form>
+              <div class="cv-confirm" id="ref-done" tabindex="-1" hidden>
+                <h2 class="section-title">Referral received</h2>
+                <p>We'll review what you've sent and contact you within five working days to offer an appointment. (Prototype: nothing is sent.)</p>
+              </div>
+            </div>
+            <div>
+              <p class="wf-note" data-note="7"><span class="wf-note-label">Behaviour</span>Replaces "self-refer by email or post". Three short steps, with uploads, so the team gets what it needs to offer the right appointment first time.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Guide sign-up (R34, idea 14) -->
+      <section class="cv-section" aria-labelledby="guide-title" style="margin-top:2rem">
+        <div class="hub-quick">
+          <div>
+            <h2 class="hub-h2" id="guide-title" style="margin-bottom:0.5rem">Not ready to talk yet?</h2>
+            <p>Get our plain guide to fertility treatment: what happens, what it costs and the questions to ask any clinic. We'll also send the next information session dates.</p>
+          </div>
+          <form id="guide" class="copy-row" novalidate style="min-width:min(100%,380px)">
+            <label for="g-email" class="visually-hidden">Email</label>
+            <input id="g-email" type="email" data-req placeholder="Your email" autocomplete="email">
+            <button class="btn" type="submit">Send me the guide</button>
+            <p class="field-error" id="g-email-err" hidden>Enter a valid email address</p>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Prototype pager (replaces Cambridge IVF's own footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next" data-proto-pager></nav>
+      <p class="wf-meta">Prototypes for discussion · Prices as published on cambridge-ivf.nhs.uk · Anything marked sample is illustrative · Photography © Cambridge IVF</p>
+    </div>
+  </footer>
+
+  <script src="../js/quick-wins.js"></script>
+  <script src="../js/wireframe.js"></script>
+  <script src="../js/civf.js"></script>
+  <script src="../js/photos.js"></script>
+</body>
+</html>

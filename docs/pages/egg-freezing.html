@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Egg freezing: Cambridge IVF prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Prototype navigator (replaces Cambridge IVF's own header, R01).
+       Two tabs: the five big improvements and the quick wins. -->
+  <header class="sticky site-header proto-nav">
+    <div class="proto-tabs">
+      <div class="container">
+        <nav class="proto-sections" aria-label="Sections">
+          <a href="../index.html" data-section-link="major">Big improvements</a>
+          <a href="../quick-wins/index.html" data-section-link="quick">Quick wins</a>
+        </nav>
+      </div>
+    </div>
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="Cambridge IVF prototypes, overview">Cambridge IVF <span>prototypes</span></a>
+      <nav aria-label="Big improvements" data-section="major">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/costs.html" data-proto="costs"><span class="n">1</span> Clear costs</a></li>
+          <li><a href="../pages/find-your-path.html" data-proto="find-your-path your-journey"><span class="n">2</span> Find your path</a></li>
+          <li><a href="../pages/start.html" data-proto="start"><span class="n">3</span> Start today</a></li>
+          <li><a href="../pages/proof.html" data-proto="proof"><span class="n">4</span> Proof you can trust</a></li>
+          <li><a href="../pages/egg-freezing.html" data-proto="egg-freezing self-pay"><span class="n">5</span> Self-pay services</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Quick wins" data-section="quick" hidden>
+        <ul class="proto-links">
+          <li><a href="../quick-wins/index.html" data-qw-link="index">Overview</a></li>
+          <li class="qw-jump-li"><label class="qw-jump-label" for="qw-jump">Quick win</label>
+            <select id="qw-jump" class="qw-jump" data-qw-jump><option value="">Jump to…</option></select></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 5 of 5 · Self-pay services: egg freezing</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Turn the egg freezing page into a proper hub for people planning ahead: who it's for, what happens, the full cost including storage over the years, what affects the chance of success later, honest answers to the common questions, the next information session and a clear way to book a consultation. A second page brings the clinic's other self-pay services online: <a href="../pages/self-pay.html">semen analysis booking, a donor pre-screen and storage payments</a>.</p></div>
+          <div><h2>Why</h2><p>Egg freezing is paid for privately, researched for months and worth £3,675 to £7,875 up front, followed by £346 a year in storage for as long as the eggs are kept. The current page is about 750 characters long, with no price, no answers to common questions and a link to the prices page on the old domain. Bourn Hall and CARE both give it a section of its own. It's one of the few services where a better page should translate quite directly into more bookings, and the storage income lasts for years.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="page-head">
+      <div class="container">
+        <p class="cv-eyebrow">Fertility preservation</p>
+        <h1>Egg freezing</h1>
+        <p class="lead">Freezing your eggs gives you more options later. Here's who it's for, what happens, what it really costs over time and how to find out if it's right for you.</p>
+        <div class="row" style="margin-top:1rem">
+          <a class="btn" href="../pages/start.html?topic=ahead">Book an egg freezing consultation</a>
+          <a class="btn btn-secondary" href="../pages/start.html?topic=session">Come to an information session</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <section class="cv-section" aria-labelledby="who-title">
+        <h2 class="section-title" id="who-title">Who it's for</h2>
+        <div class="grid grid-3">
+          <div class="card"><h3 class="card-title">Planning ahead</h3><p class="card-text">You'd like children one day, but not yet.</p></div>
+          <div class="card"><h3 class="card-title">Before medical treatment</h3><p class="card-text">Chemotherapy or surgery may affect your fertility. Often NHS-funded, and seen quickly: the current wait is one working day.</p></div>
+          <div class="card"><h3 class="card-title">Before transition</h3><p class="card-text">Preserving eggs before gender-affirming treatment.</p></div>
+        </div>
+      </section>
+
+      <section class="cv-section" aria-labelledby="how-title">
+        <h2 class="section-title" id="how-title">What happens</h2>
+        <ol class="cv-route-steps">
+          <li>Fertility assessment, including an AMH blood test and a scan</li>
+          <li>Consultation to plan your cycle</li>
+          <li>About two weeks of hormone injections at home, with monitoring scans</li>
+          <li>Egg collection under sedation at Kefford House</li>
+          <li>Eggs frozen and stored until you're ready</li>
+        </ol>
+      </section>
+
+      <!-- Cost over time (R50, idea 36) -->
+      <section class="cv-section" aria-labelledby="cost-title">
+        <h2 class="section-title" id="cost-title">What it costs, including storage</h2>
+        <div class="cv-est">
+          <form id="ef-calc" class="cv-form" novalidate>
+            <div class="field"><label for="ef-pkg">Package</label>
+              <select id="ef-pkg"><option value="3675">One cycle, £3,675</option><option value="5775">Two cycles, £5,775 (paid £4,200 then £1,575)</option><option value="7875">Three cycles, £7,875 (paid £4,725 then £1,575 twice)</option></select></div>
+            <div class="field"><label for="ef-years">How long might you store them?</label><input id="ef-years" type="range" min="1" max="15" value="5"><p class="field-hint">For <b id="ef-years-out">5 years</b>. Storage can be renewed for up to 55 years under UK law, with consent renewed every ten.</p></div>
+            <p class="wf-note query" data-note="1"><span class="wf-note-label">Open question</span>The storage-limit wording needs checking against current HFEA guidance before it goes live.</p>
+          </form>
+          <div class="cv-total" aria-live="polite">
+            <p class="cv-eyebrow">Total over that time</p>
+            <p class="cv-price" id="ef-total"></p>
+            <ul class="cv-lines" id="ef-break"></ul>
+            <p class="cv-small">Packages include medication, scans and blood tests, egg collection, freezing, the HFEA fee and the first year of storage.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cv-section" aria-labelledby="chance-title">
+        <div class="cv-split">
+          <div>
+            <h2 class="section-title" id="chance-title">What affects the chance of success later</h2>
+            <p>The most important factor is your age when the eggs are frozen, followed by how many eggs are stored. Freezing eggs isn't a guarantee of a baby later, and we'll talk honestly about what's realistic for you.</p>
+            <p class="cv-small"><a href="https://www.hfea.gov.uk/treatments/fertility-preservation/egg-freezing/">The HFEA's guide to egg freezing</a></p>
+          </div>
+          <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>Could the clinic publish its own outcomes for frozen eggs, or the HFEA's national figures by age at freezing? People researching egg freezing look for exactly this.</p>
+        </div>
+      </section>
+
+      <section class="cv-section" aria-labelledby="faq-title">
+        <h2 class="section-title" id="faq-title">Common questions</h2>
+        <div class="accordion" data-single>
+          <div class="accordion-item"><button type="button" class="accordion-title">Is there an age limit?<span class="accordion-icon">&#9662;</span></button><div class="accordion-content"><p>[Clinic to confirm its age criteria for egg freezing.]</p></div></div>
+          <div class="accordion-item"><button type="button" class="accordion-title">How many eggs should I freeze?<span class="accordion-icon">&#9662;</span></button><div class="accordion-content"><p>It depends on your age and egg reserve. Your consultant will talk you through it, and some people choose two or three cycles to store more.</p></div></div>
+          <div class="accordion-item"><button type="button" class="accordion-title">Can I keep working during treatment?<span class="accordion-icon">&#9662;</span></button><div class="accordion-content"><p>Most people do. You'll need a few early-morning scans and a day off for egg collection.</p></div></div>
+          <div class="accordion-item"><button type="button" class="accordion-title">What happens when I want to use them?<span class="accordion-icon">&#9662;</span></button><div class="accordion-content"><p>The eggs are thawed and fertilised, and an embryo is transferred. This costs £3,675 at today's prices.</p></div></div>
+          <div class="accordion-item"><button type="button" class="accordion-title">Can I move my eggs to another clinic?<span class="accordion-icon">&#9662;</span></button><div class="accordion-content"><p>Yes. There's an admin fee of £247 to another UK clinic.</p></div></div>
+        </div>
+      </section>
+
+      <section class="cv-section" aria-labelledby="next-title">
+        <div class="hub-quick">
+          <div><h2 class="hub-h2" id="next-title" style="margin-bottom:0.5rem">Not sure yet?</h2><p>Come to a free information session, or book a consultation (£220) to talk through your own situation.</p></div>
+          <div class="row"><a class="btn" href="../pages/start.html?topic=ahead">Book a consultation</a><a class="btn btn-secondary" href="../pages/start.html?topic=session">Information sessions</a></div>
+        </div>
+      </section>
+    </div>
+
+    <nav class="cv-actionbar" aria-label="Quick actions">
+      <a class="btn btn-secondary" href="tel:01223349010">Call</a>
+      <a class="btn btn-secondary" href="../pages/start.html?topic=session">Info session</a>
+      <a class="btn" href="../pages/start.html?topic=ahead">Book</a>
+    </nav>
+  </main>
+
+  <!-- Prototype pager (replaces Cambridge IVF's own footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next" data-proto-pager></nav>
+      <p class="wf-meta">Prototypes for discussion · Prices as published on cambridge-ivf.nhs.uk · Anything marked sample is illustrative · Photography © Cambridge IVF</p>
+    </div>
+  </footer>
+
+  <script src="../js/quick-wins.js"></script>
+  <script src="../js/wireframe.js"></script>
+  <script src="../js/civf.js"></script>
+  <script src="../js/photos.js"></script>
+</body>
+</html>

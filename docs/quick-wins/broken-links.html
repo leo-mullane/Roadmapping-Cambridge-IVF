@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fix the two broken menu links: Cambridge IVF quick wins</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body data-qw-theme="content">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Prototype navigator (replaces Cambridge IVF's own header, R01).
+       Two tabs: the five big improvements and the quick wins. -->
+  <header class="sticky site-header proto-nav">
+    <div class="proto-tabs">
+      <div class="container">
+        <nav class="proto-sections" aria-label="Sections">
+          <a href="../index.html" data-section-link="major">Big improvements</a>
+          <a href="../quick-wins/index.html" data-section-link="quick">Quick wins</a>
+        </nav>
+      </div>
+    </div>
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="Cambridge IVF prototypes, overview">Cambridge IVF <span>prototypes</span></a>
+      <nav aria-label="Big improvements" data-section="major">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/costs.html" data-proto="costs"><span class="n">1</span> Clear costs</a></li>
+          <li><a href="../pages/find-your-path.html" data-proto="find-your-path your-journey"><span class="n">2</span> Find your path</a></li>
+          <li><a href="../pages/start.html" data-proto="start"><span class="n">3</span> Start today</a></li>
+          <li><a href="../pages/proof.html" data-proto="proof"><span class="n">4</span> Proof you can trust</a></li>
+          <li><a href="../pages/egg-freezing.html" data-proto="egg-freezing self-pay"><span class="n">5</span> Self-pay services</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Quick wins" data-section="quick" hidden>
+        <ul class="proto-links">
+          <li><a href="../quick-wins/index.html" data-qw-link="index">Overview</a></li>
+          <li class="qw-jump-li"><label class="qw-jump-label" for="qw-jump">Quick win</label>
+            <select id="qw-jump" class="qw-jump" data-qw-jump><option value="">Jump to…</option></select></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="main" class="flush">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 13 of 22 · Content clean-up</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Remove “Early pregnancy and Coronavirus” from the menu and give “Your journey” a real page or a working link.</p></div>
+          <div><h2>Why</h2><p>Two links in the main menu go to “Page not found”: the “Your journey” section and “Early pregnancy and Coronavirus”. Broken links in the main menu are a small thing that undermines a clinic asking people for several thousand pounds. It’s ten minutes in the menu settings.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Quick win QW13 (idea 17): Fix the two broken menu links -->
+    <div class="container qw-head">
+      <p class="qw-num">Quick win 13 · Content clean-up</p>
+      <h1>Fix the two broken menu links</h1>
+      <p class="lead">Remove “Early pregnancy and Coronavirus” from the menu and give “Your journey” a real page or a working link.</p>
+      
+    </div>
+
+    <div data-ba>
+      <div class="ba-bar">
+        <div class="container">
+          <div class="ba-switch" role="group" aria-label="Compare">
+            <button type="button" data-ba-show="before" aria-pressed="true">Today</button>
+            <button type="button" data-ba-show="after" aria-pressed="false">Proposed</button>
+          </div>
+          <span class="ba-hint">Switch between the site as it is today and the change. Arrow keys work too.</span>
+        </div>
+      </div>
+      <div class="container ba-stage">
+        <div class="ba-before">
+          <p class="ba-caption"><b>Today</b><span>Two main-menu links lead here.</span></p>
+          <div class="ba-frame"><div class="ba-frame-bar"><i></i><i></i><i></i><span>cambridge-ivf.nhs.uk/your-journey/</span></div>
+            <div class="ba-frame-body">
+<div class="cv-mock-head"><span class="logo">Cambridge IVF</span><span class="cv-mock-nav"><span>About us</span><span>Services</span><span>Prices</span><span>Referrals</span><span>Success rates</span><span>Contact us</span></span></div><div class="cv-404"><b>404</b><h2>Page not found</h2><p>Please check the web address to make sure it was correct.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="ba-after" hidden>
+          <p class="ba-caption"><b>Proposed</b><span>The coronavirus link is gone; Your journey goes somewhere useful.</span></p>
+          <div class="ba-frame"><div class="ba-frame-bar"><i></i><i></i><i></i><span>cambridge-ivf.nhs.uk/your-journey/</span></div>
+            <div class="ba-frame-body">
+<div class="cv-mock-head"><span class="logo">Cambridge IVF</span><span class="cv-mock-nav"><span>About us</span><span>Services</span><span>Prices</span><span>Referrals</span><span>Success rates</span><span>Contact us</span></span></div><div class="cv-mock-body"><p class="cv-eyebrow">Your journey</p><h2>What happens, step by step</h2><ol class="cv-list"><li>Get in touch</li><li>Fertility assessment</li><li>Consultation and plan</li><li>Getting ready</li><li>Your treatment cycle</li><li>Embryo transfer</li><li>Pregnancy test</li><li>Early pregnancy and the Rosie</li></ol></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Prototype pager (replaces Cambridge IVF's own footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next" data-proto-pager></nav>
+      <p class="wf-meta">Prototypes for discussion · Prices as published on cambridge-ivf.nhs.uk · Anything marked sample is illustrative · Photography © Cambridge IVF</p>
+    </div>
+  </footer>
+
+  <script src="../js/quick-wins.js"></script>
+  <script src="../js/wireframe.js"></script>
+  <script src="../js/civf.js"></script>
+  <script src="../js/photos.js"></script>
+</body>
+</html>

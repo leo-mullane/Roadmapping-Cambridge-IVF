@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your journey: Cambridge IVF prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Prototype navigator (replaces Cambridge IVF's own header, R01).
+       Two tabs: the five big improvements and the quick wins. -->
+  <header class="sticky site-header proto-nav">
+    <div class="proto-tabs">
+      <div class="container">
+        <nav class="proto-sections" aria-label="Sections">
+          <a href="../index.html" data-section-link="major">Big improvements</a>
+          <a href="../quick-wins/index.html" data-section-link="quick">Quick wins</a>
+        </nav>
+      </div>
+    </div>
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="Cambridge IVF prototypes, overview">Cambridge IVF <span>prototypes</span></a>
+      <nav aria-label="Big improvements" data-section="major">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/costs.html" data-proto="costs"><span class="n">1</span> Clear costs</a></li>
+          <li><a href="../pages/find-your-path.html" data-proto="find-your-path your-journey"><span class="n">2</span> Find your path</a></li>
+          <li><a href="../pages/start.html" data-proto="start"><span class="n">3</span> Start today</a></li>
+          <li><a href="../pages/proof.html" data-proto="proof"><span class="n">4</span> Proof you can trust</a></li>
+          <li><a href="../pages/egg-freezing.html" data-proto="egg-freezing self-pay"><span class="n">5</span> Self-pay services</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Quick wins" data-section="quick" hidden>
+        <ul class="proto-links">
+          <li><a href="../quick-wins/index.html" data-qw-link="index">Overview</a></li>
+          <li class="qw-jump-li"><label class="qw-jump-label" for="qw-jump">Quick win</label>
+            <select id="qw-jump" class="qw-jump" data-qw-jump><option value="">Jump to…</option></select></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 2 of 5 · Find your path: your journey</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Publish the "Your journey" page the menu already promises: one timeline from first enquiry to the early pregnancy scan and the Rosie. Each step says roughly how long it takes, what it costs and who you'll see, with a switch between the NHS-funded and self-funded routes.</p></div>
+          <div><h2>Why</h2><p>Today the "Your journey" link returns "Page not found", and the steps are spread across the lab page, the support information page and seven package pages. People about to spend several thousand pounds want to know what they're signing up to and how long it will take. Joined-up care through to the Rosie is also one of the clearest things an NHS clinic can offer that a private one can't, and at the moment it's on a page that leads with a royal visit in 2013.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="page-head">
+      <div class="container">
+        <p class="cv-eyebrow">Your journey</p>
+        <h1>What happens, step by step</h1>
+        <p class="lead">Every journey is different, but most follow these steps. Open any step for what happens, how long it takes and what it costs.</p>
+        <div class="row" role="group" aria-label="Show the route for" style="margin-top:1rem">
+          <button type="button" class="chip" data-fund="self" aria-pressed="true">Self-funded</button>
+          <button type="button" class="chip" data-fund="nhs" aria-pressed="false">NHS-funded</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" style="padding-top:2rem">
+      <!-- Timeline (R23, idea 16) -->
+      <ol class="cv-timeline">
+        <li data-step="1"><div class="cv-step"><button type="button" aria-expanded="true"><b>Get in touch</b><span>Day one</span></button>
+          <div class="cv-step-body">
+            <p data-fund-show="self">Enquire online, book a call with the patient team or come to a free information session, where you can speak to an embryologist, a fertility nurse and our finance manager.</p>
+            <p data-fund-show="nhs" hidden>Your GP or hospital consultant refers you. We'll write to you with an appointment once we've checked your area's funding criteria.</p>
+            <div class="cv-meta-row"><span><b>Cost</b>Free</span><span><b>Who you'll see</b>Patient team</span></div>
+            <a class="btn btn-sm" href="../pages/start.html">Start today</a>
+          </div></div></li>
+        <li data-step="2"><div class="cv-step"><button type="button" aria-expanded="false"><b>Fertility assessment</b><span>About 2 weeks</span></button>
+          <div class="cv-step-body" hidden>
+            <p>Blood tests including AMH, a 3D ultrasound scan and, for couples, a semen analysis. You'll have your results before your consultation.</p>
+            <div class="cv-meta-row"><span data-fund-show="self"><b>Cost</b>£375 to £595</span><span data-fund-show="nhs" hidden><b>Cost</b>NHS-funded</span><span><b>Where</b>Cambridge or Ipswich</span></div>
+          </div></div></li>
+        <li data-step="3"><div class="cv-step"><button type="button" aria-expanded="false"><b>Consultation and plan</b><span>One hour</span></button>
+          <div class="cv-step-body" hidden>
+            <p>A consultant goes through your results and recommends a treatment and package. Ask anything. You'll leave with a written plan and a costed quote.</p>
+            <div class="cv-meta-row"><span data-fund-show="self"><b>Cost</b>Included in the assessment, or £220</span><span data-fund-show="nhs" hidden><b>Cost</b>NHS-funded</span><span><b>Who you'll see</b>Fertility consultant</span></div>
+            <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>"A written plan and a costed quote" is a proposed change to how the clinic works, not just the site. It's the fix for the HFEA "way above the estimate" ratings.</p>
+          </div></div></li>
+        <li data-step="4"><div class="cv-step"><button type="button" aria-expanded="false"><b>Getting ready</b><span>2 to 6 weeks</span></button>
+          <div class="cv-step-body" hidden>
+            <p>Screening tests, consent forms and two counselling sessions. If you're using a donor, this is when you choose one, with implications counselling to help you think it through.</p>
+            <div class="cv-meta-row"><span><b>Cost</b>Included in your package</span><span><b>Who you'll see</b>Nurse and counsellor</span></div>
+          </div></div></li>
+        <li data-step="5"><div class="cv-step"><button type="button" aria-expanded="false"><b>Your treatment cycle</b><span>Around 4 to 6 weeks</span></button>
+          <div class="cv-step-body" hidden>
+            <p>Medication to stimulate your ovaries, monitoring scans, then egg collection under sedation at Kefford House. In the lab, eggs are fertilised and embryos grow in the EmbryoScope for five or six days.</p>
+            <div class="cv-meta-row"><span data-fund-show="self"><b>Cost</b>Your package</span><span data-fund-show="nhs" hidden><b>Cost</b>NHS-funded</span><span><b>Where</b>Scans in Cambridge or Ipswich, egg collection in Cambridge</span></div>
+            <a class="btn btn-sm btn-secondary" href="../pages/costs.html">See package prices</a>
+          </div></div></li>
+        <li data-step="6"><div class="cv-step"><button type="button" aria-expanded="false"><b>Embryo transfer</b><span>Day 5 or 6 after collection</span></button>
+          <div class="cv-step-body" hidden>
+            <p>A short procedure to place one embryo in the womb. Any good-quality embryos left over can be frozen for later.</p>
+            <div class="cv-meta-row"><span><b>Freezing</b>£765 including the first year</span><span><b>Storage after that</b>£346 a year</span></div>
+          </div></div></li>
+        <li data-step="7"><div class="cv-step"><button type="button" aria-expanded="false"><b>Pregnancy test</b><span>About 2 weeks later</span></button>
+          <div class="cv-step-body" hidden>
+            <p>Whatever the result, you'll have a review appointment or an early pregnancy scan, and counselling is there if you need it, usually within two weeks.</p>
+          </div></div></li>
+        <li data-step="8"><div class="cv-step"><button type="button" aria-expanded="false"><b>Early pregnancy and the Rosie</b><span>From about 7 weeks</span></button>
+          <div class="cv-step-body" hidden>
+            <p>Because we're part of Cambridge University Hospitals, your care can continue at the Rosie maternity hospital, including specialist services if you need them.</p>
+          </div></div></li>
+      </ol>
+      <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>Durations are typical figures for discussion. The clinic should confirm current timings, especially from enquiry to first appointment.</p>
+    </div>
+  </main>
+
+  <!-- Prototype pager (replaces Cambridge IVF's own footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next" data-proto-pager></nav>
+      <p class="wf-meta">Prototypes for discussion · Prices as published on cambridge-ivf.nhs.uk · Anything marked sample is illustrative · Photography © Cambridge IVF</p>
+    </div>
+  </footer>
+
+  <script src="../js/quick-wins.js"></script>
+  <script src="../js/wireframe.js"></script>
+  <script src="../js/civf.js"></script>
+  <script src="../js/photos.js"></script>
+</body>
+</html>
