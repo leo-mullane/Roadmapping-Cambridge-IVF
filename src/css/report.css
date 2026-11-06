@@ -1,0 +1,42 @@
+/* Findings report: Cambridge IVF look (values from the design system page). */
+:root { --pink:#7C2855; --pinkd:#551C3B; --pinka:#AE2573; --tint:#FAEBF2; --blue:#005EB8; --blued:#002F5C; --text:#212B32; --text2:#4C6272; --grey:#F0F4F5; --border:#D8DDE0; --focus:#75EDFF; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Frutiger W01", "Hind", Arial, sans-serif; color: var(--text); font-size: 17px; line-height: 1.6; background: #fff; }
+a { color: var(--blue); font-weight: 600; text-underline-offset: 2px; }
+a:hover { color: var(--blued); }
+a:focus, button:focus { outline: 4px solid transparent; background: var(--focus); color: var(--text); box-shadow: 0 4px var(--text); text-decoration: none; }
+.rp-skip { position: absolute; left: -9999px; }
+.rp-skip:focus { left: 1rem; top: 1rem; z-index: 99; padding: 0.5rem 1rem; }
+.rp-wrap { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+.rp-hero { background: var(--grey); padding: 48px 0 40px; }
+.rp-hero .rp-wrap { border-left: 10px solid var(--pinka); padding-left: 28px; }
+.rp-eyebrow { color: var(--pinka); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: 13px; margin: 0 0 6px; }
+.rp-hero h1 { color: var(--pink); font-size: clamp(32px, 4.5vw, 52px); line-height: 1.08; margin: 0 0 14px; max-width: 18em; }
+.rp-lead { font-size: 19px; max-width: 760px; margin: 0 0 22px; }
+.rp-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.rp-btn { display: inline-block; background: var(--pink); color: #fff; border: 1px solid var(--pink); padding: 10px 20px; font-weight: 700; text-decoration: none; }
+.rp-btn:hover { background: var(--pinkd); color: #fff; }
+.rp-btn-2 { background: #fff; color: var(--text); border-color: var(--text); }
+.rp-btn-2:hover { background: var(--grey); color: var(--text); }
+.rp-layout { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 48px; padding-top: 40px; padding-bottom: 40px; }
+.rp-toc { position: sticky; top: 16px; align-self: start; font-size: 15px; }
+.rp-toc ol { list-style: none; padding: 0; margin: 0; border-left: 3px solid var(--border); }
+.rp-toc li a { display: block; padding: 5px 0 5px 14px; color: var(--text); text-decoration: none; font-weight: 600; }
+.rp-toc li a:hover { color: var(--pink); }
+.rp-main { max-width: 860px; }
+.rp-sec { padding-bottom: 12px; margin-bottom: 28px; border-bottom: 1px solid var(--border); }
+.rp-sec:last-child { border-bottom: 0; }
+.rp-main h2 { font-size: clamp(26px, 3vw, 34px); line-height: 1.15; margin: 8px 0 14px; color: var(--text); scroll-margin-top: 16px; }
+.rp-main h3 { font-size: 21px; color: var(--pink); margin: 26px 0 8px; }
+.rp-main p, .rp-main li { max-width: 72ch; }
+.rp-main ul, .rp-main ol { padding-left: 1.3rem; }
+.rp-main li { margin-bottom: 6px; }
+.rp-table { overflow-x: auto; margin: 18px 0 24px; border: 1px solid var(--border); }
+.rp-table table { border-collapse: collapse; width: 100%; font-size: 15px; line-height: 1.45; }
+.rp-table th, .rp-table td { text-align: left; vertical-align: top; padding: 9px 12px; border-bottom: 1px solid var(--border); }
+.rp-table thead th { background: var(--text); color: #fff; }
+.rp-table.wide table { font-size: 14px; min-width: 760px; }
+.rp-table.wide td:first-child { font-weight: 600; }
+.rp-foot { border-top: 5px solid var(--pink); padding: 24px 0 48px; color: var(--text2); font-size: 14px; }
+@media (max-width: 900px) { .rp-layout { grid-template-columns: minmax(0, 1fr); gap: 20px; } .rp-toc { position: static; } .rp-hero .rp-wrap { padding-left: 18px; } }
+@media print { .rp-strip, .rp-toc, .rp-actions { display: none; } .rp-layout { display: block; } }

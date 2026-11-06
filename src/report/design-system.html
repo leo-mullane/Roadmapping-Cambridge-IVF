@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cambridge IVF design system</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--font:"Frutiger W01","Hind",Arial,sans-serif;--text:#212B32;--text2:#4C6272;--pink:#7C2855;--pinkd:#551C3B;--pinka:#AE2573;--pinkt:#FAEBF2;--blue:#005EB8;--blued:#002F5C;--focus:#75EDFF;--grey:#F0F4F5;--border:#D8DDE0;--mid:#919EA6}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--font);color:var(--text);font-size:16px;line-height:24px;background:#fff}
+a{color:var(--blue);font-weight:700}
+a:focus,button:focus{outline:4px solid transparent;background:var(--focus);color:var(--text);box-shadow:0 4px var(--text)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 20px}
+header.top{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:5}
+header.top .wrap{display:flex;align-items:center;gap:24px;min-height:72px;flex-wrap:wrap}
+.logo{font-weight:700;font-size:22px;line-height:1.1;color:var(--pink)}
+.logo small{display:block;font-size:13px;font-weight:400;color:var(--pinka)}
+header.top nav{display:flex;gap:18px;flex-wrap:wrap;margin-left:auto}
+header.top nav a{color:var(--text);text-decoration:none;font-size:15px;padding:24px 0 19px;border-bottom:5px solid transparent}
+header.top nav a:hover{border-bottom-color:var(--pink)}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:60px 0 50px;align-items:center}
+.hero h1{font-size:48px;line-height:48px;font-weight:700;margin:0 0 20px}
+.hero h1 span{color:var(--pink);display:block}
+.hero p{font-size:18px;line-height:28px;max-width:560px}
+.hero .art{background:var(--pink);min-height:300px;position:relative;overflow:hidden}
+.hero .art:after{content:"";position:absolute;inset:40px -60px -60px 40%;background:var(--pinka);opacity:.55}
+.hero .art:before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:var(--pinkt);left:22%;top:26%;opacity:.9}
+section{padding:50px 0;border-top:1px solid var(--border)}
+section.grey{background:var(--grey)}
+h2.sec{font-size:40px;line-height:44px;margin:0 0 8px;font-weight:700}
+h2.sec span{color:var(--pink)}
+.intro{font-size:18px;line-height:28px;color:var(--text2);max-width:800px;margin:0 0 30px}
+h3{font-size:22px;line-height:28px;margin:30px 0 12px}
+.grid{display:grid;gap:20px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:#fff;border:1px solid var(--border);padding:24px}
+.card h4{margin:0 0 8px;font-size:20px;color:var(--blue)}
+.swatch{border:1px solid var(--border);background:#fff}
+.swatch .chip{height:96px;display:flex;align-items:flex-end;padding:10px;font-weight:700;font-size:14px}
+.swatch .meta{padding:12px;font-size:14px;line-height:20px}
+.swatch code{font-size:13px}
+.ratio{display:inline-block;padding:1px 6px;font-size:12px;font-weight:700;background:var(--grey);margin:2px 4px 0 0}
+.ratio.fail{background:#fde8e6;color:#8a1538}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:15px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+th{background:var(--grey);font-size:14px}
+.btn{display:inline-block;font-family:var(--font);font-weight:700;font-size:16px;padding:10px 20px;border:1px solid transparent;border-radius:0;text-decoration:none;cursor:pointer;line-height:24px}
+.btn-blue{background:var(--blue);color:#fff}.btn-blue:hover{background:var(--blued)}
+.btn-pink{background:var(--pink);color:#fff;border-color:var(--pink)}.btn-pink:hover{background:var(--pinkd);border-color:var(--pinkd)}
+.btn-border{background:#fff;color:var(--text);border-color:var(--text)}
+.btn-focus{background:var(--focus);color:var(--text);box-shadow:0 4px var(--text)}
+.demo-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin:10px 0 20px}
+.teaser{display:grid;grid-template-columns:150px 1fr;border:1px solid var(--border);background:#fff}
+.teaser .img{background:linear-gradient(135deg,var(--pinkt),#e6c4d6)}
+.teaser .body{padding:16px 20px}
+.teaser h4{font-size:22px;line-height:28px;margin:0 0 6px;color:var(--blue);text-decoration:underline}
+.gridcta{display:grid;grid-template-columns:5fr 7fr;min-height:360px}
+.gridcta .panel{background:var(--pink);color:#fff;padding:50px 40px;border:1px solid #fff}
+.gridcta .panel h4{font-size:56px;line-height:56px;margin:16px 0 20px;color:#fff}
+.gridcta .pic{background:linear-gradient(120deg,#f4dbe7,#e0b6cb 60%,#c88eab)}
+details.acc{background:#fff;border:1px solid var(--grey);margin-bottom:8px}
+details.acc summary{padding:18px 24px;color:var(--blue);font-weight:700;cursor:pointer;font-size:19px}
+details.acc div{padding:0 24px 20px}
+.inset{border-left:8px solid var(--pink);padding:16px 24px;background:#fff;margin:16px 0}
+.pagehero{border-left:10px solid var(--pinka);background:var(--grey);padding:36px 30px}
+.pagehero h4{font-size:44px;line-height:52px;margin:0}
+.bug{background:#005EB8;color:#fff;padding:36px 30px}
+.bug h4{font-size:44px;line-height:52px;margin:0;color:#fff}
+.footer-demo{border-top:5px solid var(--pink);background:#fff;padding:30px 24px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+.footer-demo .slogan{font-size:32px;line-height:32px;font-weight:700}
+.footer-demo h5{font-size:22px;color:var(--blue);margin:0 0 10px}
+.do,.dont{padding:18px 20px;background:#fff;border-top:5px solid}
+.do{border-color:#007f3b}.dont{border-color:#d5281b}
+.do h4,.dont h4{margin:0 0 8px}
+ul.tight{margin:0;padding-left:20px}
+pre{background:#212B32;color:#f0f4f5;padding:20px;overflow:auto;font-size:13px;line-height:19px;margin:0}
+.copybar{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.note{font-size:14px;color:var(--text2)}
+.scale-row{display:grid;grid-template-columns:200px 1fr;gap:20px;align-items:baseline;border-bottom:1px solid var(--border);padding:14px 0}
+.scale-row .lbl{font-size:13px;color:var(--text2);line-height:18px}
+footer.site{border-top:5px solid var(--pink);padding:30px 0 50px;font-size:14px;color:var(--text2)}
+@media(max-width:900px){.hero,.g2,.g3,.g4,.gridcta,.footer-demo{grid-template-columns:1fr}.hero h1{font-size:36px;line-height:38px}h2.sec{font-size:30px;line-height:34px}.scale-row{grid-template-columns:1fr}.teaser{grid-template-columns:90px 1fr}.gridcta .panel h4{font-size:40px;line-height:40px}}
+</style>
+<style>
+.rp-strip{background:#7C2855;font-family:"Frutiger W01","Hind",Arial,sans-serif;position:relative;z-index:50}
+.rp-strip .in{max-width:1280px;margin:0 auto;padding:0 20px;display:flex;gap:4px;flex-wrap:wrap}
+.rp-strip a{color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:9px 12px;border-bottom:3px solid transparent}
+.rp-strip a[aria-current=page]{border-bottom-color:#fff}
+.rp-strip a:hover{background:#551C3B}
+.rp-strip a:focus{background:#75EDFF;color:#212B32;outline:4px solid transparent}
+</style>
+</head>
+<body>
+<nav class="rp-strip" aria-label="Report and prototypes"><div class="in"><a href="index.html">Findings report</a><a href="ideas.html">All 43 ideas</a><a href="design-system.html" aria-current=page>Design system</a><a href="../index.html">Prototypes</a><a href="../quick-wins/index.html">Quick wins</a></div></nav>
+<header class="top"><div class="wrap">
+  <div class="logo">Cambridge IVF<small>Creating your future</small></div>
+  <nav aria-label="Sections">
+    <a href="#principles">Principles</a><a href="#colour">Colour</a><a href="#type">Type</a><a href="#layout">Layout</a><a href="#components">Components</a><a href="#voice">Voice</a><a href="#tokens">Tokens</a>
+  </nav>
+</div></header>
+
+<main>
+<div class="wrap hero">
+  <div>
+    <h1><span>Design system,</span><span>rebuilt from</span>the live site.</h1>
+    <p>Every value on this page was measured from cambridge-ivf.nhs.uk: its stylesheet and the computed styles at 1440px. It is the reference for the prototypes that follow, so they look and feel like Cambridge IVF rather than a generic template.</p>
+    <a class="btn btn-pink" href="#tokens">Copy the tokens</a>
+  </div>
+  <div class="art" role="img" aria-label="Illustrated placeholder in Cambridge IVF pinks"></div>
+</div>
+
+<section id="principles" class="grey"><div class="wrap">
+  <h2 class="sec"><span>Principles</span> behind the look</h2>
+  <p class="intro">Cambridge IVF sits on the Cambridge University Hospitals (CUH) web platform, which is built on the NHS.UK design system. The IVF brand is a theme laid over it: NHS dark pink instead of NHS blue for the big moments.</p>
+  <div class="grid g4">
+    <div class="card"><h4>NHS first</h4><p>Frutiger, square corners, NHS blue links and the yellow-aqua focus state. Patients should feel they are on an NHS site, because they are.</p></div>
+    <div class="card"><h4>Pink for warmth</h4><p>#7C2855 carries headings, the hero button, the footer rule and the big call-to-action panels. It is what separates Cambridge IVF from the rest of CUH.</p></div>
+    <div class="card"><h4>Heavy headings, plain body</h4><p>Headings are 800 weight and tight (line-height 1). Body copy is 16 to 18px, regular, generous line-height.</p></div>
+    <div class="card"><h4>Flat and square</h4><p>No radius, no shadows, 1px borders in #D8DDE0, grey #F0F4F5 bands to separate sections.</p></div>
+  </div>
+</div></section>
+
+<section id="colour"><div class="wrap">
+  <h2 class="sec"><span>Colour</span> and contrast</h2>
+  <p class="intro">Core palette, with WCAG 2.2 contrast ratios measured against white and the grey surface. AA needs 4.5:1 for body text and 3:1 for large text.</p>
+  <h3>Core palette</h3>
+  <div class="grid g4">
+    <div class="swatch"><div class="chip" style="background:#7C2855;color:#fff">IVF pink</div><div class="meta"><code>#7C2855</code> · --civf-pink<br>Headlines, hero button, footer rule<br><span class="ratio">9.16 on white</span><span class="ratio">8.27 on grey</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#551C3B;color:#fff">Pink dark</div><div class="meta"><code>#551C3B</code> · hover<br>Button hover<br><span class="ratio">13.0 white on it</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#AE2573;color:#fff">Pink accent</div><div class="meta"><code>#AE2573</code><br>Page-hero bar, sidebar border, quotes<br><span class="ratio">6.34 on white</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#FAEBF2;color:#212B32">Pink tint</div><div class="meta"><code>#FAEBF2</code><br>Soft panels (from the NHS palette in the CSS)<br><span class="ratio">text 12.52</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#005EB8;color:#fff">NHS blue</div><div class="meta"><code>#005EB8</code> · --civf-blue<br>Links, card titles, primary button<br><span class="ratio">6.38 on white</span><span class="ratio">5.76 on grey</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#002F5C;color:#fff">Blue dark</div><div class="meta"><code>#002F5C</code><br>Button and link hover<br><span class="ratio">13.45 white on it</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#212B32;color:#fff">Text</div><div class="meta"><code>#212B32</code><br>Body and nav text<br><span class="ratio">14.42 on white</span><span class="ratio">13.02 on grey</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#4C6272;color:#fff">Text secondary</div><div class="meta"><code>#4C6272</code><br>Captions, form placeholder text<br><span class="ratio">6.37 on white</span><span class="ratio">5.75 on grey</span></div></div>
+  </div>
+  <h3>Surfaces and lines</h3>
+  <div class="grid g4">
+    <div class="swatch"><div class="chip" style="background:#fff;color:#212B32;border-bottom:1px solid #D8DDE0">White</div><div class="meta"><code>#FFFFFF</code><br>Default page, cards, footer</div></div>
+    <div class="swatch"><div class="chip" style="background:#F0F4F5;color:#212B32">Grey band</div><div class="meta"><code>#F0F4F5</code><br>bg-fill--grey sections, breadcrumb strip</div></div>
+    <div class="swatch"><div class="chip" style="background:#D8DDE0;color:#212B32">Border</div><div class="meta"><code>#D8DDE0</code><br>All 1px rules and card edges</div></div>
+    <div class="swatch"><div class="chip" style="background:#75EDFF;color:#212B32">Focus</div><div class="meta"><code>#75EDFF</code><br>Focus fill with a 4px #212B32 bar<br><span class="ratio">10.52 text on it</span></div></div>
+  </div>
+  <p class="note" style="margin-top:16px">Mid grey <code>#919EA6</code> appears in the CSS but only reaches <span class="ratio fail">2.75:1</span> on white, so keep it decorative. The shared stylesheet also carries the full NHS palette for other CUH sites (greens, oranges, purples); Cambridge IVF pages only use the colours above.</p>
+</div></section>
+
+<section id="type" class="grey"><div class="wrap">
+  <h2 class="sec"><span>Type</span> scale</h2>
+  <p class="intro">Frutiger W01 (served from assets.nhs.uk, licensed to the NHS). This page uses <strong>Hind</strong> from Google Fonts as a labelled stand-in, so sizes and rhythm are right but letterforms differ slightly.</p>
+  <div class="scale-row"><div class="lbl">Feature panel heading<br>70 / 70 · 800 · white on pink</div><div style="font-size:70px;line-height:70px;font-weight:700;color:var(--pink)">Start your journey</div></div>
+  <div class="scale-row"><div class="lbl">Page heading<br>58 / 72.5 · 800</div><div style="font-size:58px;line-height:72px;font-weight:700">We're here for you</div></div>
+  <div class="scale-row"><div class="lbl">Hero heading<br>48 / 48 · 800 · first lines pink</div><div style="font-size:48px;line-height:48px;font-weight:700"><span style="color:var(--pink)">Your Dreams, Your Choices,</span><br>Your Future.</div></div>
+  <div class="scale-row"><div class="lbl">Footer slogan<br>32 / 32 · 800</div><div style="font-size:32px;line-height:32px;font-weight:700">Creating your future</div></div>
+  <div class="scale-row"><div class="lbl">Card title (h3)<br>26 / 34.7 · 800 · NHS blue</div><div style="font-size:26px;line-height:35px;font-weight:700;color:var(--blue)">Fertility Assessment Packages</div></div>
+  <div class="scale-row"><div class="lbl">Dropdown title, footer heading<br>22 / 32 · 800</div><div style="font-size:22px;line-height:32px;font-weight:700;color:var(--pink)">View our services</div></div>
+  <div class="scale-row"><div class="lbl">Nav link<br>18 / 26.5 · 800</div><div style="font-size:18px;line-height:27px;font-weight:700">Success rates</div></div>
+  <div class="scale-row"><div class="lbl">Content paragraph<br>18 / 28 · 400</div><div style="font-size:18px;line-height:28px">PURE IVF is a single cycle of IVF and the PURE Duo package includes two IVF cycles. Both packages are all-inclusive and fixed price.</div></div>
+  <div class="scale-row"><div class="lbl">Body, cards, footer<br>16 / 24 · 400</div><div>We accept self-funded patients from anywhere and NHS funded patients from the East of England, Hertfordshire and West Essex.</div></div>
+  <div class="scale-row"><div class="lbl">Utility (accessibility tools)<br>14 / 20.6 · 400 · blue</div><div style="font-size:14px;color:var(--blue)">Accessibility tools</div></div>
+</div></section>
+
+<section id="layout"><div class="wrap">
+  <h2 class="sec"><span>Layout</span> and grid</h2>
+  <div class="grid g3">
+    <div class="card"><h4>Container</h4><p>1280px maximum, 20px side gutters, 1240px content width inside the large wrapper. Sections are spaced by 50px top and bottom.</p></div>
+    <div class="card"><h4>Breakpoints</h4><p>480, 641 (40.0625em, from NHS.UK), 768, 1024 and 1280px. The header collapses to a Menu button below 1024px.</p></div>
+    <div class="card"><h4>Header</h4><p>White, 153px tall at desktop including the utility bar. Nav items have 38px vertical padding and a 5px bottom rule on hover/active.</p></div>
+  </div>
+  <h3>One thing to fix while you're in there</h3>
+  <p>Inner pages carry the body class <code>theme-- -ivf</code>, which is a broken theme name. The IVF theme rules never apply, so every inner page falls back to an NHS blue hero (left) rather than the IVF treatment the theme defines (right). Content also sits in a 640px column with nothing on the right at desktop.</p>
+  <div class="grid g2">
+    <div class="bug"><h4>PURE IVF &amp; PURE IVF Duo</h4><p style="margin:8px 0 0">Today: NHS blue hero</p></div>
+    <div class="pagehero"><h4>PURE IVF &amp; PURE IVF Duo</h4><p style="margin:8px 0 0">With the IVF theme applied: pink accent bar</p></div>
+  </div>
+</div></section>
+
+<section id="components" class="grey"><div class="wrap">
+  <h2 class="sec"><span>Components</span> rebuilt from computed styles</h2>
+  <h3>Buttons</h3>
+  <p>Square, 800 weight, 10px 20px padding, 1px border.</p>
+  <div class="demo-row">
+    <button class="btn btn-pink">Book a free Information Session</button>
+    <button class="btn btn-blue">Find out more</button>
+    <button class="btn btn-border">Download price list</button>
+    <span class="btn btn-focus">Focus state</span>
+  </div>
+  <h3>Service teaser</h3>
+  <div class="grid g2">
+    <div class="teaser"><div class="img" role="img" aria-label="Image placeholder"></div><div class="body"><h4>Fertility Treatments</h4><p style="margin:0">IVF packages (Pure and Pure Duo, Plus and Plus Duo, Multi-Cycle, Shared Motherhood), ICSI, IUI, Ovulation Induction.</p></div></div>
+    <div class="teaser"><div class="img" role="img" aria-label="Image placeholder"></div><div class="body"><h4>Fertility Preservation</h4><p style="margin:0">Egg, sperm and embryo freezing for those who wish to preserve their fertility and give themselves options for the future.</p></div></div>
+  </div>
+  <h3>Grid call-to-action</h3>
+  <div class="gridcta">
+    <div class="panel"><p style="margin:0">We are an assisted conception unit backed by some of the world's most advanced medical research.</p><h4>Start your journey with us</h4><a class="btn btn-border" href="#components">Find out how we can help</a></div>
+    <div class="pic" role="img" aria-label="Photograph placeholder"></div>
+  </div>
+  <h3>Accordion (NHS.UK details)</h3>
+  <details class="acc"><summary>PURE IVF package · £5,240</summary><div>Single cycle. Includes medication up to pregnancy testing (except Lubion), sedation, monitoring scans, HFEA licence fee, blastocyst culture and embryo transfer.</div></details>
+  <details class="acc"><summary>Multi-Cycle IVF package · £11,540</summary><div>Three cycles, paid in stages: £8,390, then £1,575, then £1,575.</div></details>
+  <h3>Inset text</h3>
+  <div class="inset">Cambridge IVF accepts self-funded patients from anywhere and NHS funded patients from the East of England, Hertfordshire and West Essex.</div>
+  <h3>Footer</h3>
+  <div class="footer-demo">
+    <div class="slogan">Creating<br>your future</div>
+    <div><h5>Contact us</h5>Kefford House<br>Maris Lane, Trumpington<br>Cambridge CB2 9LG<br>01223 349010</div>
+    <div><h5>Explore</h5><a href="#components">About us</a><br><a href="#components">Services</a><br><a href="#components">Success rates</a></div>
+  </div>
+</div></section>
+
+<section id="voice"><div class="wrap">
+  <h2 class="sec"><span>Voice</span> and content</h2>
+  <p class="intro">Warm, inclusive and NHS-plain. The best copy on the site speaks to "you" and names who the clinic is for. The weakest copy is promotional, dated or inconsistent.</p>
+  <div class="grid g2">
+    <div class="do"><h4>Do</h4><ul class="tight">
+      <li>Name the people you treat: couples, same sex couples, single women, single men, transgender people.</li>
+      <li>Give the number: "£5,240, paid in one go" or "seen within two weeks".</li>
+      <li>Say what is included and what is not, in the same place as the price.</li>
+      <li>Point to the HFEA for comparison and ratings, as the success rates page already does.</li>
+      <li>Use plain words for treatment steps, with the clinical term after it.</li>
+    </ul></div>
+    <div class="dont"><h4>Don't</h4><ul class="tight">
+      <li>Use superlatives you can't evidence ("the best success rates in Europe").</li>
+      <li>Leave dated news in evergreen pages (ministers, CCGs, petitions, 2013 openings).</li>
+      <li>State eligibility differently on two pages.</li>
+      <li>Use the NHS "Non-urgent advice" card for general information.</li>
+      <li>Invent quotes or testimonials. Prototypes use [bracketed placeholders] instead.</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section id="tokens" class="grey"><div class="wrap">
+  <h2 class="sec"><span>Tokens</span> to copy</h2>
+  <div class="copybar"><span class="note">Also supplied as cambridge-ivf-tokens.css</span><button class="btn btn-blue" id="copy">Copy tokens</button></div>
+<pre id="tok">:root {
+  --civf-font: "Frutiger W01", "Hind", Arial, sans-serif;
+  --civf-size-body: 16px;   /* lh 24 */
+  --civf-size-lead: 18px;
+  --civf-size-h4: 22px;
+  --civf-size-h3: 26px;
+  --civf-size-hero: 48px;   /* lh 1 */
+  --civf-size-page-heading: 58px;
+  --civf-size-feature: 70px;
+  --civf-text: #212B32;
+  --civf-text-secondary: #4C6272;
+  --civf-pink: #7C2855;
+  --civf-pink-dark: #551C3B;
+  --civf-pink-accent: #AE2573;
+  --civf-pink-tint: #FAEBF2;
+  --civf-blue: #005EB8;
+  --civf-blue-dark: #002F5C;
+  --civf-focus: #75EDFF;
+  --civf-grey-bg: #F0F4F5;
+  --civf-border: #D8DDE0;
+  --civf-radius: 0;
+  --civf-button-pad: 10px 20px;
+  --civf-container: 1280px;
+  --civf-gutter: 20px;
+  --civf-section: 50px;
+}</pre>
+  <p class="note" id="copied" aria-live="polite"></p>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">Measured from cambridge-ivf.nhs.uk. Frutiger is shown with Hind as a stand-in.</div></footer>
+<script>
+document.getElementById('copy').addEventListener('click',async()=>{const m=document.getElementById('copied');try{await navigator.clipboard.writeText(document.getElementById('tok').textContent);m.textContent='Copied.'}catch(e){m.textContent='Copy was blocked here. Select the text above instead.'}});
+</script>
+</body>
+</html>

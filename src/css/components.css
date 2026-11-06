@@ -839,3 +839,5 @@ body.hub .hub-hero { border-top: 0; }
 .proto-links a { padding-left: 0.4rem; padding-right: 0.4rem; font-size: 0.875rem; }
 .proto-home { font-size: 0.9375rem; }
 .field input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), .field select, .field textarea { width: 100%; padding: 0.6rem 0.75rem; font: inherit; border: 1px solid var(--wf-border-strong); border-radius: var(--wf-radius); background: var(--wf-page); color: var(--wf-text); }
+.proto-tabs .proto-sections { flex-wrap: wrap; }
+@media (max-width: 480px) { .proto-tabs .proto-sections a { padding: 0.25rem 0.5rem; font-size: 0.8125rem; } }
