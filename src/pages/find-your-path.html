@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find your path: Cambridge IVF prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body>
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 2 of 5 · Find your path</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Give each kind of patient their own way in: couples, female couples, single women, single men, trans and non-binary people, people planning ahead, NHS referrals and people moving from another clinic. Each shows the likely route, the first paid step and what to do next. Alongside it sit a four-question check of which package is likely to fit, a plain NHS funding check and, on a second page, the journey from first enquiry to the Rosie.</p></div>
+          <div><h2>Why</h2><p>The homepage already names every one of these groups in its opening paragraph, and then the menu is organised by service: assessments, treatments, preservation, donors. Female couples, single women and people freezing eggs are almost all self-funded, so they are the most valuable visitors the site gets, and they have to translate the clinic's structure into their own situation. Every competitor we looked at speaks to them by name. Meanwhile the NHS funding page still talks about CCGs, which were replaced in 2022, and the "Your journey" link in the menu goes to "Page not found".</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="page-head">
+      <div class="container">
+        <h1>Where would you like to start?</h1>
+        <p class="lead">Whoever you are and whatever your situation, there's a route to treatment here. Tell us a little about you and we'll show you the likely steps, costs and the best first thing to do.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Who are you (R20, idea 15) -->
+      <section class="cv-section" aria-labelledby="who-title">
+        <h2 class="section-title" id="who-title">Which best describes you?</h2>
+        <div class="cv-tiles" role="group" aria-label="Choose your situation">
+          <button type="button" class="cv-tile" data-route="couple" aria-pressed="false"><b>Heterosexual couples</b><span>Trying for a while, or ready to find out more</span></button>
+          <button type="button" class="cv-tile" data-route="female" aria-pressed="false"><b>Female couples</b><span>Donor IUI, IVF or Shared Motherhood</span></button>
+          <button type="button" class="cv-tile" data-route="single" aria-pressed="false"><b>Single women</b><span>Treatment with donor sperm</span></button>
+          <button type="button" class="cv-tile" data-route="men" aria-pressed="false"><b>Single men and male couples</b><span>Testing, preservation and options</span></button>
+          <button type="button" class="cv-tile" data-route="trans" aria-pressed="false"><b>Trans and non-binary people</b><span>Preserving fertility before or after transition</span></button>
+          <button type="button" class="cv-tile" data-route="ahead" aria-pressed="false"><b>Planning ahead</b><span>Egg or sperm freezing</span></button>
+          <button type="button" class="cv-tile" data-route="nhs" aria-pressed="false"><b>Referred by the NHS</b><span>Check what your area funds</span></button>
+          <button type="button" class="cv-tile" data-route="elsewhere" aria-pressed="false"><b>Treated elsewhere</b><span>Moving your care to us</span></button>
+        </div>
+        <div id="route-panel" class="cv-route cv-panel" aria-live="polite" hidden></div>
+        <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>The same eight entry points appear in the main menu and under the homepage hero. Each could also be a page in its own right, with a matching patient story and FAQs, which is better for search.</p>
+        <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>The routes for single men, male couples and trans people are our reading of the current services. The clinical team should confirm what Cambridge IVF offers directly and where it refers on, for example for surrogacy.</p>
+      </section>
+
+      <!-- Package check (R21, idea 4) -->
+      <section class="cv-section" id="check" aria-labelledby="check-title">
+        <div class="cv-split">
+          <div>
+            <h2 class="section-title" id="check-title">Which package is likely to fit?</h2>
+            <p>Four questions. Your consultant confirms the right package once they've seen your results.</p>
+            <form id="elig" class="cv-form" novalidate>
+              <div class="two">
+                <div class="field"><label for="el-age">Age of the person providing the eggs</label><input id="el-age" type="number" inputmode="numeric" min="18" max="60"></div>
+                <div class="field"><label for="el-bmi">BMI</label><input id="el-bmi" type="number" inputmode="decimal" step="0.1" min="12" max="70"><p class="field-hint"><button type="button" class="btn-link" data-qw-toggle="bmi-help" aria-expanded="false">Work out my BMI</button></p></div>
+              </div>
+              <div id="bmi-help" class="cv-panel soft" hidden>
+                <div class="two">
+                  <div class="field" style="margin:0"><label for="bmi-h">Height (cm)</label><input id="bmi-h" type="number" inputmode="numeric"></div>
+                  <div class="field" style="margin:0"><label for="bmi-w">Weight (kg)</label><input id="bmi-w" type="number" inputmode="numeric"></div>
+                </div>
+                <p class="cv-small" style="margin-top:0.5rem">Your BMI: <b id="bmi-out">–</b></p>
+              </div>
+              <div class="field"><label for="el-amh">AMH result, if you know it (pmol/L)</label><input id="el-amh" type="number" inputmode="decimal" step="0.1" min="0"><p class="field-hint">Leave blank if you haven't had the test. It's a blood test that estimates egg reserve (£121 with us).</p></div>
+              <fieldset class="cv-q">
+                <legend>Have you had IVF before, or a natural pregnancy?</legend>
+                <div class="cv-opts">
+                  <span class="cv-opt"><input type="radio" name="el-prev" id="pv-none" value="none"><label for="pv-none">Neither</label></span>
+                  <span class="cv-opt"><input type="radio" name="el-prev" id="pv-ivf" value="ivf"><label for="pv-ivf">IVF before</label></span>
+                  <span class="cv-opt"><input type="radio" name="el-prev" id="pv-preg" value="preg"><label for="pv-preg">A natural pregnancy</label></span>
+                </div>
+              </fieldset>
+              <p class="field-error" id="el-err" tabindex="-1" hidden>Please answer all four questions. Age should be 18 to 60 and BMI a number like 24.5.</p>
+              <div><button class="btn" type="submit">Check</button></div>
+            </form>
+            <div class="cv-result" id="el-result" tabindex="-1" aria-live="polite" hidden>
+              <h3>What this suggests</h3>
+              <p id="el-text"></p>
+              <div class="row" style="margin-top:0.75rem"><a class="btn" id="el-link" href="costs.html">See the likely cost</a><a class="btn btn-secondary" href="start.html?topic=session">Ask us at an information session</a></div>
+            </div>
+          </div>
+          <div class="cv-panel soft">
+            <h3 style="margin-top:0">Why we ask</h3>
+            <p class="cv-small">Our fixed-price packages are designed around age, egg reserve (AMH) and BMI, because they shape how much medication you need and how many eggs are likely. Answering now saves reading four package pages to find the one that applies to you.</p>
+            <p class="wf-note query" data-note="3"><span class="wf-note-label">Open question</span>The rules here follow the prices page. The PURE page gives different ones (under 38, AMH above 10, BMI below 30). One set needs agreeing before this goes live.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- NHS funding check (R22, idea 28) -->
+      <section class="cv-section" id="nhs" aria-labelledby="nhs-title">
+        <h2 class="section-title" id="nhs-title">Can I get NHS-funded treatment?</h2>
+        <div class="cv-split">
+          <div>
+            <p>NHS funding for IVF is decided by the integrated care board (ICB) for the area where your GP is. We treat NHS-funded patients from the East of England, Hertfordshire and West Essex.</p>
+            <div class="field" style="max-width:420px"><label for="nhs-area">Where is your GP?</label>
+              <select id="nhs-area"><option value="">Choose an area</option><option value="cp">Cambridgeshire and Peterborough</option><option value="herts">Hertfordshire and West Essex</option><option value="suffolk">Suffolk and North East Essex</option><option value="other">Somewhere else</option></select>
+            </div>
+            <div class="cv-result" id="nhs-out" aria-live="polite" hidden><p id="nhs-text"></p><p class="cv-small" style="margin-top:0.5rem">Not eligible? <a href="costs.html?package=first">Self-funded IVF starts at £2,900</a>.</p></div>
+          </div>
+          <div>
+            <p class="wf-note query" data-note="4"><span class="wf-note-label">Open question</span>Each ICB's current criteria need checking and linking. Today the live page says Cambridge and Peterborough CCG "have recently announced" that NHS IVF is returning, with details "to be added".</p>
+            <p class="wf-note" data-note="5"><span class="wf-note-label">Behaviour</span>People who find they aren't NHS-eligible are the clinic's next self-funded patients, so the answer always ends with the self-funded route.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Journey link (R23, idea 16) -->
+      <section class="cv-section" aria-labelledby="j-title">
+        <div class="hub-quick">
+          <div><h2 class="hub-h2" id="j-title" style="margin-bottom:0.5rem">What happens, step by step</h2><p>From your first call to your early pregnancy scan and care at the Rosie, with how long each step takes and what it costs.</p></div>
+          <a class="btn" href="~/pages/your-journey.html">See your journey</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/quick-wins.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/civf.js"></script>
+  <script src="~/js/photos.js"></script>
+  <script src="~/js/bmi.js"></script>
+</body>
+</html>

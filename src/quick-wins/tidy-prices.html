@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tidy the prices page: Cambridge IVF quick wins</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-qw-theme="costs">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 4 of 22 · Costs and packages</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Correct the typos on the prices page, show the add-ons once in their own table and check the gamete transport fees.</p></div>
+          <div><h2>Why</h2><p>The prices page is the one people read most carefully, and it has “chalmydia”, “IICSI”, “Human and Fertilisation (HFEA)” and “pregnancy scan.pregnancy scan.” The add-on list is repeated under nearly every package. Transporting gametes overseas costs £330, or £300 with a special export directive, which may be right but looks like a mistake. Small things, but on a page asking for several thousand pounds they make people wonder what else is wrong.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Quick win QW4 (idea 32): Tidy the prices page -->
+    <div class="container qw-head">
+      <p class="qw-num">Quick win 4 · Costs and packages</p>
+      <h1>Tidy the prices page</h1>
+      <p class="lead">Correct the typos on the prices page, show the add-ons once in their own table and check the gamete transport fees.</p>
+      
+    </div>
+
+    <div data-ba>
+      <div class="ba-bar">
+        <div class="container">
+          <div class="ba-switch" role="group" aria-label="Compare">
+            <button type="button" data-ba-show="before" aria-pressed="true">Today</button>
+            <button type="button" data-ba-show="after" aria-pressed="false">Proposed</button>
+          </div>
+          <span class="ba-hint">Switch between the site as it is today and the change. Arrow keys work too.</span>
+        </div>
+      </div>
+      <div class="container ba-stage">
+        <div class="ba-before">
+          <p class="ba-caption"><b>Today</b><span>Typos and a fee that looks the wrong way round.</span></p>
+          <div class="ba-frame"><div class="ba-frame-bar"><i></i><i></i><i></i><span>cambridge-ivf.nhs.uk/prices/</span></div>
+            <div class="ba-frame-body">
+<p>Includes: Medication up to pregnancy testing (except Lubion), virals &amp; <span class="cv-mark">chalmydia</span>…</p><p>…the compulsory <span class="cv-mark">Human and Fertilisation (HFEA)</span> license fee…</p><p>Additional Services that may be required: <span class="cv-mark">IICSI</span> - £1,323</p><p>…review appointment or early <span class="cv-mark">pregnancy scan.pregnancy scan.</span></p><p>Transport of gametes to overseas clinic - £330<br>Transport of gametes to overseas clinic (including special export directive) - <span class="cv-mark">£300</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="ba-after" hidden>
+          <p class="ba-caption"><b>Proposed</b><span>Corrected copy, and the transport fees flagged for checking.</span></p>
+          <div class="ba-frame"><div class="ba-frame-bar"><i></i><i></i><i></i><span>cambridge-ivf.nhs.uk/prices/</span></div>
+            <div class="ba-frame-body">
+<p>Includes: medication up to the pregnancy test (except Lubion), viral and chlamydia screening…</p><p>…the Human Fertilisation and Embryology Authority (HFEA) licence fee…</p><p>Add-ons: see <a href="#">add-ons and the evidence</a>, listed once for all packages.</p><p>…review appointment or early pregnancy scan.</p><p>Transport of gametes to an overseas clinic: £330<br>With a special export direction: [fee to be confirmed]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/quick-wins.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/civf.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

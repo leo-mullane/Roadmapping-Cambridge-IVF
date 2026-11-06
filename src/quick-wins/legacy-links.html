@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clean up legacy links: Cambridge IVF quick wins</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-qw-theme="content">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 15 of 22 · Content clean-up</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Replace links to the old cambridge-ivf.org.uk domain and the Outlook “safelinks” on the feedback page with direct links.</p></div>
+          <div><h2>Why</h2><p>The egg freezing and health professionals pages still link to the old domain. The feedback page’s links to the HFEA, the GMC and the NMC are wrapped in Outlook safelinks that include a member of staff’s email address, presumably pasted from an email. That’s a small privacy slip as well as untidy. Fixing it, and adding a broken-link check to a monthly routine, is an hour’s work.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Quick win QW15 (idea 30): Clean up legacy links -->
+    <div class="container qw-head">
+      <p class="qw-num">Quick win 15 · Content clean-up</p>
+      <h1>Clean up legacy links</h1>
+      <p class="lead">Replace links to the old cambridge-ivf.org.uk domain and the Outlook “safelinks” on the feedback page with direct links.</p>
+      
+    </div>
+
+    <div data-ba>
+      <div class="ba-bar">
+        <div class="container">
+          <div class="ba-switch" role="group" aria-label="Compare">
+            <button type="button" data-ba-show="before" aria-pressed="true">Today</button>
+            <button type="button" data-ba-show="after" aria-pressed="false">Proposed</button>
+          </div>
+          <span class="ba-hint">Switch between the site as it is today and the change. Arrow keys work too.</span>
+        </div>
+      </div>
+      <div class="container ba-stage">
+        <div class="ba-before">
+          <p class="ba-caption"><b>Today</b><span>Links pasted from an email, staff address included.</span></p>
+          <div class="ba-frame"><div class="ba-frame-bar"><i></i><i></i><i></i><span>cambridge-ivf.nhs.uk/contact-us/feedback/</span></div>
+            <div class="ba-frame-body">
+<p>Complaints about a fertility clinic can be made to the HFEA:</p><p class="cv-small" style="word-break:break-all">https://gbr01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.hfea.gov.uk%2Fcontact-us%2F&amp;data=05%7C01%7C<span class="cv-mark">[staff.name]%40nhs.net</span>%7C…</p><p>Prices | Cambridge IVF (<span class="cv-mark">cambridge-ivf.org.uk</span>)</p>
+            </div>
+          </div>
+        </div>
+        <div class="ba-after" hidden>
+          <p class="ba-caption"><b>Proposed</b><span>Plain links to the right places.</span></p>
+          <div class="ba-frame"><div class="ba-frame-bar"><i></i><i></i><i></i><span>cambridge-ivf.nhs.uk/contact-us/feedback/</span></div>
+            <div class="ba-frame-body">
+<p>Complaints about a fertility clinic can be made to the HFEA:</p><p><a href="#">HFEA: making a complaint about a fertility clinic</a></p><p><a href="#">Prices</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/quick-wins.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/civf.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

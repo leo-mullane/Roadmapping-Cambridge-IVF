@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fix the two broken menu links: Cambridge IVF quick wins</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-qw-theme="content">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 13 of 22 · Content clean-up</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Remove “Early pregnancy and Coronavirus” from the menu and give “Your journey” a real page or a working link.</p></div>
+          <div><h2>Why</h2><p>Two links in the main menu go to “Page not found”: the “Your journey” section and “Early pregnancy and Coronavirus”. Broken links in the main menu are a small thing that undermines a clinic asking people for several thousand pounds. It’s ten minutes in the menu settings.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Quick win QW13 (idea 17): Fix the two broken menu links -->
+    <div class="container qw-head">
+      <p class="qw-num">Quick win 13 · Content clean-up</p>
+      <h1>Fix the two broken menu links</h1>
+      <p class="lead">Remove “Early pregnancy and Coronavirus” from the menu and give “Your journey” a real page or a working link.</p>
+      
+    </div>
+
+    <div data-ba>
+      <div class="ba-bar">
+        <div class="container">
+          <div class="ba-switch" role="group" aria-label="Compare">
+            <button type="button" data-ba-show="before" aria-pressed="true">Today</button>
+            <button type="button" data-ba-show="after" aria-pressed="false">Proposed</button>
+          </div>
+          <span class="ba-hint">Switch between the site as it is today and the change. Arrow keys work too.</span>
+        </div>
+      </div>
+      <div class="container ba-stage">
+        <div class="ba-before">
+          <p class="ba-caption"><b>Today</b><span>Two main-menu links lead here.</span></p>
+          <div class="ba-frame"><div class="ba-frame-bar"><i></i><i></i><i></i><span>cambridge-ivf.nhs.uk/your-journey/</span></div>
+            <div class="ba-frame-body">
+<div class="cv-mock-head"><span class="logo">Cambridge IVF</span><span class="cv-mock-nav"><span>About us</span><span>Services</span><span>Prices</span><span>Referrals</span><span>Success rates</span><span>Contact us</span></span></div><div class="cv-404"><b>404</b><h2>Page not found</h2><p>Please check the web address to make sure it was correct.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="ba-after" hidden>
+          <p class="ba-caption"><b>Proposed</b><span>The coronavirus link is gone; Your journey goes somewhere useful.</span></p>
+          <div class="ba-frame"><div class="ba-frame-bar"><i></i><i></i><i></i><span>cambridge-ivf.nhs.uk/your-journey/</span></div>
+            <div class="ba-frame-body">
+<div class="cv-mock-head"><span class="logo">Cambridge IVF</span><span class="cv-mock-nav"><span>About us</span><span>Services</span><span>Prices</span><span>Referrals</span><span>Success rates</span><span>Contact us</span></span></div><div class="cv-mock-body"><p class="cv-eyebrow">Your journey</p><h2>What happens, step by step</h2><ol class="cv-list"><li>Get in touch</li><li>Fertility assessment</li><li>Consultation and plan</li><li>Getting ready</li><li>Your treatment cycle</li><li>Embryo transfer</li><li>Pregnancy test</li><li>Early pregnancy and the Rosie</li></ol></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/quick-wins.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/civf.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

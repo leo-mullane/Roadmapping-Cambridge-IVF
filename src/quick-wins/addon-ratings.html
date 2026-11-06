@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Show the HFEA rating next to every add-on: Cambridge IVF quick wins</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-qw-theme="costs">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 2 of 22 · Costs and packages</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Show the HFEA’s traffic-light rating beside every optional add-on the clinic sells, with a line on why it might be suggested.</p></div>
+          <div><h2>Why</h2><p>The prices page lists PICSI, Zymot, MACS, calcium ionophore, endometrial receptivity testing and DNA fragmentation testing without a word about the evidence. The HFEA rates PICSI and time-lapse imaging black (no effect on the chance of a baby for most patients), EmbryoGlue amber and endometrial receptivity testing red. An NHS clinic is the place patients would expect to be told this. It may trim some add-on sales; it also protects the clinic from complaints and gives it something private rivals are reluctant to copy.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Quick win QW2 (idea 6): Show the HFEA rating next to every add-on -->
+    <div class="container qw-head">
+      <p class="qw-num">Quick win 2 · Costs and packages</p>
+      <h1>Show the HFEA rating next to every add-on</h1>
+      <p class="lead">Show the HFEA’s traffic-light rating beside every optional add-on the clinic sells, with a line on why it might be suggested.</p>
+      <p class="qw-where">Also part of big improvement 1, Clear costs.</p>
+    </div>
+
+    <div data-ba>
+      <div class="ba-bar">
+        <div class="container">
+          <div class="ba-switch" role="group" aria-label="Compare">
+            <button type="button" data-ba-show="before" aria-pressed="true">Today</button>
+            <button type="button" data-ba-show="after" aria-pressed="false">Proposed</button>
+          </div>
+          <span class="ba-hint">Switch between the site as it is today and the change. Arrow keys work too.</span>
+        </div>
+      </div>
+      <div class="container ba-stage">
+        <div class="ba-before">
+          <p class="ba-caption"><b>Today</b><span>Add-ons listed with prices only, repeated under each package.</span></p>
+          <div class="ba-frame"><div class="ba-frame-bar"><i></i><i></i><i></i><span>cambridge-ivf.nhs.uk/prices/</span></div>
+            <div class="ba-frame-body">
+<p><b>Additional Services for Pure:</b><br>ICSI - £1,323<br>PICSI &amp; Zymot - £245 &amp; £150 (in addition to ICSI fee)<br>MACS ICSI - £1,683<br>MACS ICSI (completed at elsewhere) £2,025<br>Vitrification (freezing embryos and one years storage) - £765<br>Calcium Ionophore - £127</p><p class="cv-muted">…and the same list again under PURE Duo, IVF Plus, IVF Plus Duo, Multi-Cycle, three Shared Motherhood packages and DuoStim.</p>
+            </div>
+          </div>
+        </div>
+        <div class="ba-after" hidden>
+          <p class="ba-caption"><b>Proposed</b><span>Each add-on carries the HFEA rating and a plain explanation.</span></p>
+          <div class="ba-frame"><div class="ba-frame-bar"><i></i><i></i><i></i><span>cambridge-ivf.nhs.uk/prices/</span></div>
+            <div class="ba-frame-body">
+<table class="cv-table"><thead><tr><th>Add-on</th><th>Price</th><th>HFEA rating</th></tr></thead><tbody><tr><td>EmbryoScope time-lapse</td><td>Included</td><td><span class="hfea black">Black: no effect</span></td></tr><tr><td>EmbryoGlue</td><td>Included</td><td><span class="hfea amber">Amber: conflicting evidence</span></td></tr><tr><td>PICSI and Zymot</td><td>£245 and £150</td><td><span class="hfea black">Black: no effect</span></td></tr><tr><td>Endometrial receptivity test</td><td>£1,308</td><td><span class="hfea red">Red: may reduce success</span></td></tr><tr><td>DNA fragmentation test</td><td>£462</td><td><span class="hfea grey">Grey: not enough evidence</span></td></tr></tbody></table><p class="cv-small" style="margin-top:0.75rem">We’ll only suggest an add-on when there’s a reason it may help you. <a href="#">What the HFEA ratings mean</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/quick-wins.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/civf.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Measure what the site produces: Cambridge IVF quick wins</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-qw-theme="start">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 7 of 22 · Getting started</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Turn on GA4 events for phone and email taps, information session bookings and price-list downloads, and send a one-page report each month.</p></div>
+          <div><h2>Why</h2><p>GA4 and Google Tag Manager are already on the site, but there are no forms to measure and we saw no sign of events on phone numbers, email links, the TryBooking link or the PDF price lists. Without them, nobody can say how many people the website sends to the clinic, or whether a change helped. Setting up the events is a few hours in Tag Manager; the report is a template someone fills in monthly.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Quick win QW7 (idea 13): Measure what the site produces -->
+    <div class="container qw-head">
+      <p class="qw-num">Quick win 7 · Getting started</p>
+      <h1>Measure what the site produces</h1>
+      <p class="lead">Turn on GA4 events for phone and email taps, information session bookings and price-list downloads, and send a one-page report each month.</p>
+      <p class="qw-where">Underpins every other change: it’s how you know which ones paid back.</p>
+    </div>
+
+    <div data-ba>
+      <div class="ba-bar">
+        <div class="container">
+          <div class="ba-switch" role="group" aria-label="Compare">
+            <button type="button" data-ba-show="before" aria-pressed="true">Today</button>
+            <button type="button" data-ba-show="after" aria-pressed="false">Proposed</button>
+          </div>
+          <span class="ba-hint">Switch between the site as it is today and the change. Arrow keys work too.</span>
+        </div>
+      </div>
+      <div class="container ba-stage">
+        <div class="ba-before">
+          <p class="ba-caption"><b>Today</b><span>Page views only.</span></p>
+          <div class="ba-frame"><div class="ba-frame-bar"><i></i><i></i><i></i><span>Google Analytics 4 (already installed)</span></div>
+            <div class="ba-frame-body">
+<div class="cv-report"><div class="cv-stat"><b>[n]</b>Page views</div><div class="cv-stat"><b>[n]</b>Users</div><div class="cv-stat"><b>?</b>Enquiries</div><div class="cv-stat"><b>?</b>Sessions booked</div></div><p class="cv-muted" style="margin-top:1rem">Which pages lead to a call? Nobody knows.</p>
+            </div>
+          </div>
+        </div>
+        <div class="ba-after" hidden>
+          <p class="ba-caption"><b>Proposed</b><span>A monthly report of the actions that lead to patients.</span></p>
+          <div class="ba-frame"><div class="ba-frame-bar"><i></i><i></i><i></i><span>Google Analytics 4 (already installed)</span></div>
+            <div class="ba-frame-body">
+<h3>Website report: [month]</h3><div class="cv-report"><div class="cv-stat"><b>[n]</b>Phone taps</div><div class="cv-stat"><b>[n]</b>Emails started</div><div class="cv-stat"><b>[n]</b>Information session clicks</div><div class="cv-stat"><b>[n]</b>Price list downloads</div></div><table class="cv-table" style="margin-top:1rem"><thead><tr><th>Page</th><th>Visits</th><th>Actions</th><th>Rate</th></tr></thead><tbody><tr><td>Prices</td><td>[n]</td><td>[n]</td><td>[%]</td></tr><tr><td>PURE IVF</td><td>[n]</td><td>[n]</td><td>[%]</td></tr><tr><td>Egg freezing</td><td>[n]</td><td>[n]</td><td>[%]</td></tr></tbody></table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/quick-wins.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/civf.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

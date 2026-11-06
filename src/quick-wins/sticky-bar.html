@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sticky ’Start your journey’ bar on mobile: Cambridge IVF quick wins</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-qw-theme="start">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 6 of 22 · Getting started</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>A slim bar at the bottom of the screen on phones with Call, Information session and Enquire, on service, price and package pages.</p></div>
+          <div><h2>Why</h2><p>On a phone the prices page is about 8,000 pixels long and has no call to action above the fold. People make up their minds while reading the long pages, and at that moment the next step is several screens away. A sticky bar is a small template change for the CUH web team.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Quick win QW6 (idea 12): Sticky ’Start your journey’ bar on mobile -->
+    <div class="container qw-head">
+      <p class="qw-num">Quick win 6 · Getting started</p>
+      <h1>Sticky ’Start your journey’ bar on mobile</h1>
+      <p class="lead">A slim bar at the bottom of the screen on phones with Call, Information session and Enquire, on service, price and package pages.</p>
+      <p class="qw-where">Also part of big improvement 3, Start today.</p>
+    </div>
+
+    <div data-ba>
+      <div class="ba-bar">
+        <div class="container">
+          <div class="ba-switch" role="group" aria-label="Compare">
+            <button type="button" data-ba-show="before" aria-pressed="true">Today</button>
+            <button type="button" data-ba-show="after" aria-pressed="false">Proposed</button>
+          </div>
+          <span class="ba-hint">Switch between the site as it is today and the change. Arrow keys work too.</span>
+        </div>
+      </div>
+      <div class="container ba-stage">
+        <div class="ba-before">
+          <p class="ba-caption"><b>Today</b><span>No way to act without scrolling back to the top or the bottom.</span></p>
+          <div class="ba-frame"><div class="ba-frame-bar"><i></i><i></i><i></i><span>cambridge-ivf.nhs.uk/prices/ on a phone</span></div>
+            <div class="ba-frame-body">
+<div class="phone"><div class="phone-screen"><div class="cv-mock-head"><span class="logo">Cambridge IVF</span><span>Menu</span></div><div style="padding:1rem"><h3>Prices</h3><p class="cv-small">Working out how much you may need to pay isn’t always easy…</p><div class="wf-placeholder" style="height:180px">Accordions</div><p class="cv-small" style="margin-top:0.75rem">34 more sections below</p></div></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="ba-after" hidden>
+          <p class="ba-caption"><b>Proposed</b><span>The next step stays one tap away.</span></p>
+          <div class="ba-frame"><div class="ba-frame-bar"><i></i><i></i><i></i><span>cambridge-ivf.nhs.uk/prices/ on a phone</span></div>
+            <div class="ba-frame-body">
+<div class="phone"><div class="phone-screen" style="position:relative"><div class="cv-mock-head"><span class="logo">Cambridge IVF</span><span>Menu</span></div><div style="padding:1rem;flex:1"><h3>Prices</h3><p class="cv-small">Working out how much you may need to pay isn’t always easy…</p><div class="wf-placeholder" style="height:180px">Accordions</div></div><div style="display:flex;gap:0.4rem;padding:0.5rem;border-top:1px solid var(--wf-border-strong)"><span class="btn btn-secondary btn-sm" style="flex:1;text-align:center">Call</span><span class="btn btn-secondary btn-sm" style="flex:1;text-align:center">Info session</span><span class="btn btn-sm" style="flex:1;text-align:center">Enquire</span></div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/quick-wins.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/civf.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

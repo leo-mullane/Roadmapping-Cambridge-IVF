@@ -1,0 +1,172 @@
+/* ==========================================================================
+   Cambridge IVF design layer
+   Everything visual lives here. Delete this file's contents to return to the
+   greyscale prototypes. Values come from the phase 1 design system (measured
+   from cambridge-ivf.nhs.uk). Frutiger is licensed to the NHS; Hind stands in.
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&display=swap');
+
+:root {
+  --civf-theme: on; /* read by photos.js: photography only loads with the design layer */
+  --civf-pink: #7C2855;
+  --civf-pink-dark: #551C3B;
+  --civf-pink-accent: #AE2573;
+  --civf-pink-tint: #FAEBF2;
+  --civf-blue: #005EB8;
+  --civf-blue-dark: #002F5C;
+  --civf-text: #212B32;
+  --civf-text-2: #4C6272;
+  --civf-grey: #F0F4F5;
+  --civf-border: #D8DDE0;
+  --civf-focus: #75EDFF;
+
+  --wf-page: #ffffff;
+  --wf-surface: var(--civf-grey);
+  --wf-placeholder: var(--civf-pink-tint);
+  --wf-border: var(--civf-border);
+  --wf-border-strong: #AEB7BD;
+  --wf-text: var(--civf-text);
+  --wf-text-muted: var(--civf-text-2);
+  --wf-action: var(--civf-blue);
+  --wf-action-hover: var(--civf-blue-dark);
+  --wf-radius: 0;
+  --wf-max-width: 1280px;
+  --wf-gutter: 20px;
+}
+
+body { font-family: "Frutiger W01", "Hind", Arial, sans-serif; font-size: 1.0625rem; line-height: 1.55; color: var(--civf-text); }
+h1, h2, h3, h4, h5, h6 { font-weight: 700; letter-spacing: -0.01em; }
+h1 { font-size: clamp(2.25rem, 4.5vw, 3.25rem); line-height: 1.08; color: var(--civf-pink); }
+h2 { line-height: 1.15; }
+a { color: var(--civf-blue); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+a:hover { color: var(--civf-blue-dark); }
+:focus-visible { outline: 4px solid transparent; background-color: var(--civf-focus) !important; color: var(--civf-text) !important; box-shadow: 0 4px 0 var(--civf-text) !important; }
+.section-title { font-size: clamp(1.6rem, 2.6vw, 2.2rem); border-bottom: 0; padding-bottom: 0; color: var(--civf-text); }
+.lead { font-size: 1.1875rem; line-height: 1.55; }
+
+/* Buttons: square, heavy, IVF pink for the main action */
+.btn { border-radius: 0; font-weight: 700; padding: 0.65rem 1.25rem; background: var(--civf-pink); border: 1px solid var(--civf-pink); color: #fff; text-decoration: none; }
+.btn:hover { background: var(--civf-pink-dark); border-color: var(--civf-pink-dark); color: #fff; text-decoration: none; }
+.btn-secondary { background: #fff; color: var(--civf-text); border-color: var(--civf-text); }
+.btn-secondary:hover { background: var(--civf-grey); color: var(--civf-text); border-color: var(--civf-text); }
+.btn-link { color: var(--civf-blue); font-weight: 600; }
+.chip, .cv-tile, .cv-slot, .cv-day, .cv-opt label, .notes-toggle, .qw-jump { border-radius: 0; }
+.chip { border-color: var(--civf-text); font-weight: 600; }
+.chip[aria-pressed="true"] { background: var(--civf-pink); border-color: var(--civf-pink); color: #fff; box-shadow: none; }
+.badge { border-radius: 0; border-color: var(--civf-pink); color: var(--civf-pink); }
+
+/* Forms */
+input:not([type=checkbox]):not([type=radio]):not([type=range]), select, textarea { border: 2px solid var(--civf-text) !important; border-radius: 0 !important; font-family: inherit; }
+input[type=range] { accent-color: var(--civf-pink); }
+.check input, .cv-addon input { accent-color: var(--civf-pink); }
+.field label, .cv-q legend { color: var(--civf-text); }
+.field-error { color: #d5281b; font-weight: 600; }
+
+/* Prototype navigator: tab strip in IVF pink, white bar beneath like the live header */
+.proto-tabs { background: var(--civf-pink); border-bottom: 0; }
+.proto-tabs .proto-sections a { color: #fff; border: 0; border-bottom: 3px solid transparent; text-decoration: none; }
+.proto-tabs .proto-sections a[aria-current="page"] { border-bottom-color: #fff; }
+.proto-nav { border-bottom: 1px solid var(--civf-border); }
+.proto-home { color: var(--civf-pink); text-decoration: none; }
+.proto-home span { color: var(--civf-pink-accent); }
+.proto-links a { color: var(--civf-text); font-weight: 700; border-bottom-width: 5px; text-decoration: none; }
+.proto-links a:hover { color: var(--civf-pink); }
+.proto-links a[aria-current="page"] { border-bottom-color: var(--civf-pink); color: var(--civf-pink); }
+.proto-links .n { border-color: var(--civf-pink); color: var(--civf-pink); }
+.notes-toggle[aria-checked="true"] .notes-track { background: var(--civf-pink); }
+
+/* Page heads: grey band with the IVF accent bar, photo on the right when available */
+.page-head { background: var(--civf-grey); border-bottom: 0; border-left: 0; padding: 2.75rem 0; position: relative; }
+.page-head .container { position: relative; border-left: 10px solid var(--civf-pink-accent); padding-left: 1.75rem; }
+.page-head.has-photo .container { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 2.5rem; align-items: center; }
+.page-head .cv-hero-photo { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; }
+@media (max-width: 900px) { .page-head.has-photo .container { grid-template-columns: minmax(0, 1fr); } }
+.cv-eyebrow { color: var(--civf-pink-accent); }
+
+/* Hub */
+.hub-hero { background: #fff; border-bottom: 5px solid var(--civf-pink); }
+.hub-hero h1 { color: var(--civf-pink); }
+.hub-hero .wf-placeholder.logo { background: transparent; border: 0; color: var(--civf-pink); font-size: 1.375rem; font-weight: 700; text-transform: none; letter-spacing: 0; width: auto; justify-content: flex-start; padding: 0; }
+.proto-card { border-radius: 0; }
+.proto-card:hover { border-color: var(--civf-pink); }
+.proto-num { border-color: var(--civf-pink); color: var(--civf-pink); }
+.proto-body h3 a { color: var(--civf-blue); text-decoration: underline; }
+.hub-quick { background: var(--civf-pink); color: #fff; border: 0; }
+.hub-quick h2, .hub-quick p { color: #fff; }
+.hub-quick .btn { background: #fff; color: var(--civf-text); border-color: #fff; }
+.hub-quick .btn:hover { background: var(--civf-grey); }
+.hub-quick .btn-secondary { background: transparent; color: #fff; border-color: #fff; }
+.hub-quick .field-error { color: #fff; }
+
+/* Cards and panels */
+.card, .cv-panel, .cv-step, .cv-session, .cv-story, .cv-person, .cv-addon, .cv-stat, .qw-card, .cv-route-steps li { border-radius: 0; border-color: var(--civf-border); }
+.card-title, .card h3, .qw-card h3 { color: var(--civf-blue); }
+.cv-panel.soft { background: var(--civf-grey); border-color: var(--civf-grey); }
+.cv-total { border: 0; border-top: 6px solid var(--civf-pink); background: #fff; box-shadow: 0 0 0 1px var(--civf-border); }
+.cv-price { color: var(--civf-pink); }
+.cv-confirm { border: 0; border-left: 8px solid var(--civf-pink); background: var(--civf-pink-tint); }
+.cv-result { border-left-color: var(--civf-pink); background: var(--civf-pink-tint); }
+.cv-stat b { color: var(--civf-pink); }
+.cv-stat { border-top: 5px solid var(--civf-pink); }
+.cv-tile { border-color: var(--civf-border); border-top: 5px solid var(--civf-pink-accent); }
+.cv-tile b { color: var(--civf-blue); }
+.cv-tile[aria-pressed="true"], .cv-opt input:checked + label, .cv-slot[aria-pressed="true"], .cv-day[aria-pressed="true"] { border-color: var(--civf-pink); box-shadow: inset 0 0 0 2px var(--civf-pink); color: var(--civf-pink); }
+.cv-route-steps li::before, .cv-timeline > li::before { border-color: var(--civf-pink); color: var(--civf-pink); }
+.cv-timeline::before { background: var(--civf-pink-accent); }
+.cv-step > button b { color: var(--civf-blue); }
+.cv-progress li.on { border-top-color: var(--civf-pink); }
+.cv-bar-fill { background: var(--civf-pink); color: #fff; }
+.cv-legend i { background: var(--civf-pink); }
+.cv-ticks li::before { color: var(--civf-pink); }
+.cv-section { border-top-color: var(--civf-border); }
+
+/* Tables */
+.cv-table thead th { background: var(--civf-text); color: #fff; }
+.cv-cmp thead th:first-child { background: var(--civf-text); }
+.cv-table .hl { background: var(--civf-pink-tint); }
+.cv-table-wrap { border-radius: 0; }
+
+/* HFEA ratings in the HFEA's own colours */
+.hfea { border-radius: 999px; }
+.hfea::before { border: 0; border-radius: 50% !important; transform: none !important; background: #768692; width: 0.8rem; height: 0.8rem; }
+.hfea.green::before { background: #007f3b; }
+.hfea.amber::before { background: #ffb81c; }
+.hfea.grey::before { background: #a0aab0; border: 0; }
+.hfea.black::before { background: #000; }
+.hfea.red::before { background: #d5281b; }
+
+/* Accordions, tabs */
+.accordion-item { border-radius: 0; }
+.accordion-title { color: var(--civf-blue); font-weight: 700; }
+.tabs { border-bottom: 2px solid var(--civf-border); }
+.tab { border-radius: 0; font-weight: 600; color: var(--civf-text); }
+.tab.active { border-color: var(--civf-border); border-top: 4px solid var(--civf-pink); color: var(--civf-pink); }
+
+/* Proposal panel and notes */
+.proposal { background: var(--civf-pink-tint); border-bottom: 1px solid #e7c3d6; }
+.proposal-eyebrow { color: var(--civf-pink); }
+.proposal h2 { color: var(--civf-pink); }
+
+/* Sticky action bar */
+.cv-actionbar { border-top: 3px solid var(--civf-pink); }
+
+/* Footer pager: white with the pink rule, like the live footer */
+.proto-footer { background: #fff; border-top: 5px solid var(--civf-pink); }
+.proto-pager a { border-radius: 0; color: var(--civf-blue); text-decoration: none; }
+.proto-pager a:hover { border-color: var(--civf-pink); }
+
+/* Quick wins */
+.qw-num, .qw-card .qw-n { color: var(--civf-pink-accent); }
+.ba-switch { border-color: var(--civf-pink); }
+.ba-switch button + button { border-left-color: var(--civf-pink); }
+.ba-switch button[aria-pressed="true"] { background: var(--civf-pink); color: #fff; }
+.ba-caption b { color: var(--civf-pink); }
+.cv-mock-head .logo { color: var(--civf-pink); }
+.cv-mock-hero { background: var(--civf-grey); border-left: 10px solid var(--civf-pink-accent); }
+.cv-mock-hero h2 { color: var(--civf-pink); }
+.qw-black { background: var(--civf-text); color: #fff; }
+
+/* Placeholders become illustrated brand panels until a photo loads */
+.wf-placeholder { background: linear-gradient(135deg, var(--civf-pink-tint), #ecc9da 60%, #d9a3bf); border: 0; color: var(--civf-pink); border-radius: 0; }
+.wf-placeholder.has-photo { background-size: cover; background-position: center; color: transparent; }
+.cv-person .wf-placeholder.has-photo { background-position: center 25%; }
